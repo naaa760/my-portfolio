@@ -42,3 +42,22 @@
   box-shadow: inset 2px 2px 5px #222, inset -2px -2px 5px #444, 2px 2px 5px #222,
     -2px -2px 5px #444;
 }
+
+/* Add this new style for the navigation buttons */
+.neu-button-nav {
+  padding: 6px 16px;
+  font-size: 12px;
+  background-color: #e0e0e0;
+  border-radius: 50px;
+  box-shadow: inset 4px 4px 8px #bcbcbc, inset -4px -4px 8px #ffffff;
+  color: #4d4d4d;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid rgb(206, 206, 206);
+  margin: 0 2px;
+}
+
+.neu-button-nav:hover {
+  box-shadow: inset 2px 2px 4px #bcbcbc, inset -2px -2px 4px #ffffff,
+    2px 2px 4px #bcbcbc, -2px -2px 4px #ffffff;
+  color: #2d9d5a;
+}
