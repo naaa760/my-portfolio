@@ -25,3 +25,120 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 10px #84cc16;
+  }
+  50% {
+    box-shadow: 0 0 20px #84cc16;
+  }
+}
+
+.glow-droplet {
+  border-radius: 50%;
+  background: #84cc16;
+  opacity: 0;
+  transform: scale(0);
+  animation: dropletGlow 4s ease-in-out infinite;
+  filter: blur(2px);
+}
+
+@keyframes dropletGlow {
+  0% {
+    opacity: 0;
+    transform: scale(0) translateY(0);
+  }
+  20% {
+    opacity: 0.6;
+    transform: scale(1) translateY(-10px);
+  }
+  40% {
+    opacity: 0.4;
+    transform: scale(0.8) translateY(-20px);
+  }
+  60% {
+    opacity: 0.6;
+    transform: scale(1.2) translateY(-30px);
+  }
+  80% {
+    opacity: 0.2;
+    transform: scale(0.6) translateY(-40px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0) translateY(-50px);
+  }
+}
+
+/* Add different animation variations */
+.glow-droplet:nth-child(3n) {
+  animation-duration: 6s;
+  background: #a3e635;
+}
+
+.glow-droplet:nth-child(3n + 1) {
+  animation-duration: 5s;
+  background: #65a30d;
+}
+
+.glow-droplet:nth-child(3n + 2) {
+  animation-duration: 7s;
+  background: #bef264;
+}
+
+/* Add glow effect to droplets */
+.glow-droplet::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: inherit;
+  border-radius: inherit;
+  filter: blur(4px);
+  opacity: 0.5;
+  animation: dropletPulse 2s ease-in-out infinite;
+}
+
+@keyframes dropletPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.2;
+  }
+}

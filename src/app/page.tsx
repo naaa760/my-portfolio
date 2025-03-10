@@ -7,6 +7,9 @@ import { useEffect, useState } from "react";
 import AnimatedLoader from "./components/AnimatedLoader";
 import "./components/neuButton.css";
 import "./components/scrollButtons.css";
+import { Dancing_Script } from "next/font/google";
+
+const dancingScript = Dancing_Script({ subsets: ["latin"] });
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
@@ -656,6 +659,572 @@ export default function Home() {
                   Web design & Web development
                 </p>
               </motion.div>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Portfolio Showcase Section - With Project Images */}
+        <motion.section
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.7 }}
+          className="w-full bg-gray-900 text-white py-12 relative overflow-hidden border-t border-gray-800"
+        >
+          {/* Background Image */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/bg1.png"
+              alt="Background Pattern"
+              fill
+              className="object-cover opacity-5"
+              priority
+              style={{
+                objectFit: "cover",
+                mixBlendMode: "luminosity",
+              }}
+            />
+          </div>
+
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 to-gray-900 z-1"></div>
+
+          {/* Content */}
+          <div className="container mx-auto px-6 relative z-10">
+            {/* Star Background Effect for Content Area */}
+            <div className="absolute inset-0 star-field-content">
+              {Array.from({ length: 50 }).map((_, i) => (
+                <div
+                  key={i}
+                  className="star-content"
+                  style={{
+                    top: `${Math.random() * 100}%`,
+                    left: `${Math.random() * 100}%`,
+                    animationDelay: `${Math.random() * 5}s`,
+                    animationDuration: `${Math.random() * 3 + 2}s`,
+                  }}
+                />
+              ))}
+              {Array.from({ length: 3 }).map((_, i) => (
+                <div
+                  key={i}
+                  className="shooting-star"
+                  style={{
+                    top: `${Math.random() * 80}%`,
+                    left: `${Math.random() * 80}%`,
+                    animationDelay: `${Math.random() * 8}s`,
+                    animationDuration: `${Math.random() * 2 + 1}s`,
+                    transform: `rotate(${Math.random() * 360}deg)`,
+                  }}
+                />
+              ))}
+            </div>
+
+            {/* Section Tag */}
+            <div className="flex items-center mb-6 relative z-20">
+              <div className="w-2 h-2 rounded-full bg-lime-400 mr-2"></div>
+              <span className="text-sm text-lime-400">[02] — Recent work</span>
+            </div>
+
+            {/* Project Cards with Images */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mt-20">
+              {/* Project Card 1 with Image */}
+              <motion.div
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className="flex justify-between items-start mb-6">
+                  <div>
+                    <span className="text-sm text-lime-400">
+                      [ Pottery artist portfolio ]
+                    </span>
+                    <h3 className="text-3xl font-medium mt-2">
+                      SilverLynx Technologies
+                    </h3>
+                  </div>
+                  <span className="text-sm text-gray-400">5/31/24</span>
+                </div>
+                <p className="text-gray-400 text-sm mb-8">
+                  Web design & Web development
+                </p>
+
+                {/* Project Image with enhanced animation and proper fitting */}
+                <motion.div
+                  className="rounded-lg overflow-hidden shadow-2xl"
+                  initial={{ scale: 1 }}
+                  whileInView={{
+                    scale: [1, 0.95, 1.02, 1],
+                  }}
+                  transition={{
+                    duration: 1.2,
+                    ease: "easeInOut",
+                    times: [0, 0.3, 0.7, 1],
+                  }}
+                >
+                  <div className="relative aspect-[16/10] w-full">
+                    <div className="absolute -inset-0.5 bg-gradient-to-r from-lime-500/30 to-emerald-500/30 rounded-lg blur-sm z-0"></div>
+                    <Image
+                      src="/pt6.png"
+                      alt="SilverLynx Technologies Project"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="relative z-10"
+                      style={{
+                        display: "block",
+                        width: "100%",
+                        height: "100%",
+                        borderRadius: "inherit",
+                        objectPosition: "center center",
+                        objectFit: "cover",
+                      }}
+                      priority
+                    />
+                  </div>
+                </motion.div>
+              </motion.div>
+
+              {/* Project Card 2 with Image */}
+              <motion.div
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                <div className="flex justify-between items-start mb-6">
+                  <div>
+                    <span className="text-sm text-lime-400">
+                      [ Artist Portfolio ]
+                    </span>
+                    <h3 className="text-3xl font-medium mt-2">
+                      Evergreen Solutions
+                    </h3>
+                  </div>
+                  <span className="text-sm text-gray-400">8/8/24</span>
+                </div>
+                <p className="text-gray-400 text-sm mb-8">
+                  Web design & Web development
+                </p>
+
+                {/* Project Image with enhanced animation and proper fitting */}
+                <motion.div
+                  className="rounded-lg overflow-hidden shadow-2xl"
+                  initial={{ scale: 1 }}
+                  whileInView={{
+                    scale: [1, 0.95, 1.02, 1],
+                  }}
+                  transition={{
+                    duration: 1.2,
+                    ease: "easeInOut",
+                    times: [0, 0.3, 0.7, 1],
+                    delay: 0.1,
+                  }}
+                >
+                  <div className="relative aspect-[16/10] w-full">
+                    <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-500/30 to-lime-500/30 rounded-lg blur-sm z-0"></div>
+                    <Image
+                      src="/pt1.png"
+                      alt="Evergreen Solutions Project"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="relative z-10"
+                      style={{
+                        display: "block",
+                        width: "100%",
+                        height: "100%",
+                        borderRadius: "inherit",
+                        objectPosition: "center center",
+                        objectFit: "cover",
+                      }}
+                      priority
+                    />
+                  </div>
+                </motion.div>
+              </motion.div>
+            </div>
+
+            {/* View All Projects Button */}
+            <div className="mt-8 text-center">
+              <Link
+                href="/projects"
+                className="inline-flex items-center text-lime-400 hover:text-lime-300 transition-colors"
+              >
+                View all projects
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 w-4 ml-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Additional Projects Section */}
+        <motion.section
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8 }}
+          className="w-full bg-gray-900 text-white py-12 relative overflow-hidden"
+        >
+          {/* Star Background Effect */}
+          <div className="absolute inset-0 z-0 star-field">
+            {Array.from({ length: 50 }).map((_, i) => (
+              <div
+                key={i}
+                className="star"
+                style={{
+                  top: `${Math.random() * 100}%`,
+                  left: `${Math.random() * 100}%`,
+                  width: `${Math.random() * 2 + 1}px`,
+                  height: `${Math.random() * 2 + 1}px`,
+                  animationDelay: `${Math.random() * 5}s`,
+                  animationDuration: `${Math.random() * 3 + 2}s`,
+                }}
+              />
+            ))}
+            {Array.from({ length: 5 }).map((_, i) => (
+              <div
+                key={i}
+                className="shooting-star"
+                style={{
+                  top: `${Math.random() * 100}%`,
+                  left: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 15}s`,
+                  animationDuration: `${Math.random() * 2 + 1}s`,
+                  transform: `rotate(${Math.random() * 360}deg)`,
+                }}
+              />
+            ))}
+          </div>
+
+          {/* Background Image */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/bg2.png"
+              alt="Background Pattern"
+              fill
+              className="object-cover opacity-5"
+              priority
+              style={{
+                objectFit: "cover",
+                mixBlendMode: "luminosity",
+              }}
+            />
+          </div>
+
+          {/* Content */}
+          <div className="container mx-auto px-6 relative z-10">
+            {/* Star Background Effect for Content Area */}
+            <div className="absolute inset-0 star-field-content">
+              {Array.from({ length: 50 }).map((_, i) => (
+                <div
+                  key={i}
+                  className="star-content"
+                  style={{
+                    top: `${Math.random() * 100}%`,
+                    left: `${Math.random() * 100}%`,
+                    animationDelay: `${Math.random() * 5}s`,
+                    animationDuration: `${Math.random() * 3 + 2}s`,
+                  }}
+                />
+              ))}
+              {Array.from({ length: 3 }).map((_, i) => (
+                <div
+                  key={i}
+                  className="shooting-star"
+                  style={{
+                    top: `${Math.random() * 80}%`,
+                    left: `${Math.random() * 80}%`,
+                    animationDelay: `${Math.random() * 8}s`,
+                    animationDuration: `${Math.random() * 2 + 1}s`,
+                    transform: `rotate(${Math.random() * 360}deg)`,
+                  }}
+                />
+              ))}
+            </div>
+
+            {/* Section Tag */}
+            <div className="flex items-center mb-6 relative z-20">
+              <div className="w-2 h-2 rounded-full bg-lime-400 mr-2"></div>
+              <span className="text-sm text-lime-400">[03] — More work</span>
+            </div>
+
+            {/* Project Cards Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16 relative z-20">
+              {/* Project Card 1 */}
+              <motion.div
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <span className="text-sm text-lime-400">
+                      [ Mobile app ]
+                    </span>
+                    <h3 className="text-2xl font-medium mt-2">
+                      EchoStream Entertainment
+                    </h3>
+                  </div>
+                  <span className="text-sm text-gray-400">6/20/24</span>
+                </div>
+                <p className="text-gray-400 text-sm mb-6">UI/UX design</p>
+
+                {/* Project Image */}
+                <motion.div
+                  className="rounded-lg overflow-hidden shadow-2xl"
+                  initial={{ scale: 1 }}
+                  whileInView={{
+                    scale: [1, 0.95, 1.02, 1],
+                  }}
+                  transition={{
+                    duration: 1.2,
+                    ease: "easeInOut",
+                    times: [0, 0.3, 0.7, 1],
+                  }}
+                >
+                  <div className="relative aspect-[16/10] w-full">
+                    <div className="absolute -inset-0.5 bg-gradient-to-r from-lime-500/30 to-emerald-500/30 rounded-lg blur-sm z-0"></div>
+                    <Image
+                      src="/pt2.png"
+                      alt="EchoStream Entertainment Project"
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="relative z-10"
+                      style={{
+                        display: "block",
+                        width: "100%",
+                        height: "100%",
+                        borderRadius: "inherit",
+                        objectPosition: "center center",
+                        objectFit: "cover",
+                      }}
+                      priority
+                    />
+                  </div>
+                </motion.div>
+              </motion.div>
+
+              {/* Project Card 2 */}
+              <motion.div
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <span className="text-sm text-lime-400">
+                      [ Boutique E-commerce Store ]
+                    </span>
+                    <h3 className="text-2xl font-medium mt-2">
+                      PulseTech Innovations
+                    </h3>
+                  </div>
+                  <span className="text-sm text-gray-400">7/13/24</span>
+                </div>
+                <p className="text-gray-400 text-sm mb-6">
+                  Web design & Web development
+                </p>
+
+                {/* Project Image */}
+                <motion.div
+                  className="rounded-lg overflow-hidden shadow-2xl"
+                  initial={{ scale: 1 }}
+                  whileInView={{
+                    scale: [1, 0.95, 1.02, 1],
+                  }}
+                  transition={{
+                    duration: 1.2,
+                    ease: "easeInOut",
+                    times: [0, 0.3, 0.7, 1],
+                  }}
+                >
+                  <div className="relative aspect-[16/10] w-full">
+                    <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-500/30 to-lime-500/30 rounded-lg blur-sm z-0"></div>
+                    <Image
+                      src="/pt3.png"
+                      alt="PulseTech Innovations Project"
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="relative z-10"
+                      style={{
+                        display: "block",
+                        width: "100%",
+                        height: "100%",
+                        borderRadius: "inherit",
+                        objectPosition: "center center",
+                        objectFit: "cover",
+                      }}
+                      priority
+                    />
+                  </div>
+                </motion.div>
+              </motion.div>
+
+              {/* View All Projects Card */}
+              <motion.div
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="relative group lg:col-span-1"
+              >
+                <Link href="/projects" className="block h-full">
+                  <div className="relative aspect-[16/10] w-full rounded-lg overflow-hidden bg-[#84cc16] h-full">
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="flex flex-col items-center space-y-4">
+                        <span className="text-gray-900 text-2xl font-medium">
+                          View all projects
+                        </span>
+                        <div className="bg-gray-900 rounded-full p-2">
+                          <motion.div
+                            initial={{ x: 0 }}
+                            whileHover={{ x: 5 }}
+                            transition={{ duration: 0.3 }}
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="h-6 w-6 text-[#84cc16]"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M14 5l7 7m0 0l-7 7m7-7H3"
+                              />
+                            </svg>
+                          </motion.div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Hover Effect Overlay */}
+                    <div className="absolute inset-0 bg-[#65a30d] opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                  </div>
+                </Link>
+              </motion.div>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Contact Section with Background Image */}
+        <motion.section
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.9 }}
+          className="w-full bg-white text-gray-900 py-20 relative overflow-hidden"
+        >
+          {/* Background Image */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/pg.jpg"
+              alt="Background Pattern"
+              fill
+              className="object-cover opacity-30"
+              quality={100}
+              priority
+            />
+          </div>
+
+          {/* Content */}
+          <div className="container mx-auto px-6 relative z-10">
+            {/* Section Tag with Enhanced Glow */}
+            <div className="flex items-center mb-6">
+              <div className="w-2 h-2 rounded-full bg-[#84cc16] mr-2 animate-glow">
+                <div className="absolute w-4 h-4 -inset-1 bg-[#84cc16] opacity-75 blur-sm rounded-full"></div>
+              </div>
+              <span className="text-sm text-[#84cc16] relative">
+                <span className="relative z-10">[06] — Contact me</span>
+                <span className="absolute inset-0 bg-[#84cc16] opacity-25 blur-[2px]"></span>
+              </span>
+            </div>
+
+            {/* Section Title with Cursive Font and Glow */}
+            <h2
+              className={`${dancingScript.className} text-[72px] mb-20 max-w-4xl relative text-gray-800 leading-tight`}
+            >
+              <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-gray-600">
+                I am all over
+                <br />
+                <span className="text-[84px] text-[#84cc16] ml-8">
+                  the internet
+                </span>
+              </span>
+              <span className="absolute inset-0 bg-gradient-to-r from-[#84cc16] to-transparent opacity-10 blur-xl"></span>
+            </h2>
+
+            {/* Social Links Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Social Media Cards with Enhanced Glow */}
+              {["Twitter/X", "Instagram", "Dribbble", "Behance"].map(
+                (platform) => (
+                  <div
+                    key={platform}
+                    className="group bg-white rounded-2xl p-8 shadow-sm border border-gray-100 relative overflow-hidden transition-all duration-300"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#84cc16] to-transparent opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
+                    <div className="flex justify-between items-center relative">
+                      <h3 className="text-xl">{platform}</h3>
+                      <div className="bg-[#84cc16] rounded-full p-3 relative group-hover:shadow-[0_0_20px_rgba(132,204,22,0.3)] transition-all duration-300">
+                        <div className="absolute inset-0 bg-[#84cc16] rounded-full blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+                        <svg
+                          className="w-5 h-5 relative z-10"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M5 19L19 5M19 5H5M19 5V19"
+                            stroke="white"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                )
+              )}
+
+              {/* Get in touch with Enhanced Glow */}
+              <div className="bg-[#84cc16] rounded-2xl p-8 col-span-2 relative group cursor-pointer overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-[#84cc16] to-[#84cc16]/50 opacity-75 group-hover:opacity-100 blur-2xl transition-opacity duration-500"></div>
+                <div className="relative flex justify-between items-center">
+                  <h3 className="text-xl text-white">Get in touch</h3>
+                  <div className="bg-white rounded-full p-3 relative group-hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all duration-300">
+                    <div className="absolute inset-0 bg-white rounded-full blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+                    <svg
+                      className="w-5 h-5 text-[#84cc16] relative z-10"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <path
+                        d="M5 19L19 5M19 5H5M19 5V19"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </motion.section>
