@@ -142,3 +142,86 @@ body {
     opacity: 0.2;
   }
 }
+
+@keyframes moveLight {
+  0% {
+    transform: translate(-100%, -100%) rotate(-45deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translate(200%, 200%) rotate(-45deg);
+    opacity: 0;
+  }
+}
+
+.delay-1000 {
+  animation-delay: 1000ms;
+}
+
+/* Enhanced glow effect for project cards */
+.project-card-glow {
+  position: relative;
+}
+
+.project-card-glow::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(45deg, #84cc16, transparent, #84cc16);
+  border-radius: inherit;
+  filter: blur(5px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card-glow:hover::before {
+  opacity: 0.5;
+}
+
+@keyframes floatParticle {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate(30px, -50px) scale(1.5);
+    opacity: 0.6;
+  }
+}
+
+/* Enhanced project card hover effect */
+.project-card {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.project-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--x, 50%) var(--y, 50%),
+    rgba(132, 204, 22, 0.15) 0%,
+    transparent 50%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.project-card:hover::after {
+  opacity: 1;
+}
+
+@keyframes spinLight {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

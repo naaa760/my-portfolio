@@ -670,6 +670,31 @@ export default function Home() {
           transition={{ delay: 0.7 }}
           className="w-full bg-gray-900 text-white py-12 relative overflow-hidden border-t border-gray-800"
         >
+          {/* Light Effect Layer */}
+          <div className="absolute inset-0 z-0">
+            {/* Radial Gradient Lights - More Subtle */}
+            <div className="absolute top-1/3 left-1/3 w-[500px] h-[500px] bg-[#84cc16] opacity-[0.03] rounded-full blur-[150px] animate-pulse"></div>
+            <div className="absolute bottom-1/3 right-1/3 w-[400px] h-[400px] bg-[#84cc16] opacity-[0.02] rounded-full blur-[130px] animate-pulse delay-1000"></div>
+
+            {/* Circular Rolling Light - Fixed Position */}
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px]">
+              {[...Array(12)].map((_, i) => (
+                <div
+                  key={i}
+                  className="absolute h-[1px] w-[200px] bg-gradient-to-r from-transparent via-[#84cc16] to-transparent"
+                  style={{
+                    left: "50%",
+                    top: "50%",
+                    transform: `translate(-50%, -50%) rotate(${i * 30}deg)`,
+                    transformOrigin: "center",
+                    animation: "spinLight 8s linear infinite",
+                    opacity: 0.1,
+                  }}
+                ></div>
+              ))}
+            </div>
+          </div>
+
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <Image
@@ -874,43 +899,37 @@ export default function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
-          className="w-full bg-gray-900 text-white py-12 relative overflow-hidden"
+          className="w-full bg-gray-900 text-white py-12 relative overflow-hidden border-t border-gray-800"
         >
-          {/* Star Background Effect */}
-          <div className="absolute inset-0 z-0 star-field">
-            {Array.from({ length: 50 }).map((_, i) => (
-              <div
-                key={i}
-                className="star"
-                style={{
-                  top: `${Math.random() * 100}%`,
-                  left: `${Math.random() * 100}%`,
-                  width: `${Math.random() * 2 + 1}px`,
-                  height: `${Math.random() * 2 + 1}px`,
-                  animationDelay: `${Math.random() * 5}s`,
-                  animationDuration: `${Math.random() * 3 + 2}s`,
-                }}
-              />
-            ))}
-            {Array.from({ length: 5 }).map((_, i) => (
-              <div
-                key={i}
-                className="shooting-star"
-                style={{
-                  top: `${Math.random() * 100}%`,
-                  left: `${Math.random() * 100}%`,
-                  animationDelay: `${Math.random() * 15}s`,
-                  animationDuration: `${Math.random() * 2 + 1}s`,
-                  transform: `rotate(${Math.random() * 360}deg)`,
-                }}
-              />
-            ))}
+          {/* Light Effect Layer */}
+          <div className="absolute inset-0 z-0">
+            {/* Radial Gradient Lights - More Subtle */}
+            <div className="absolute top-1/3 left-1/3 w-[500px] h-[500px] bg-[#84cc16] opacity-[0.03] rounded-full blur-[150px] animate-pulse"></div>
+            <div className="absolute bottom-1/3 right-1/3 w-[400px] h-[400px] bg-[#84cc16] opacity-[0.02] rounded-full blur-[130px] animate-pulse delay-1000"></div>
+
+            {/* Circular Rolling Light */}
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px]">
+              {[...Array(12)].map((_, i) => (
+                <div
+                  key={i}
+                  className="absolute h-[1px] w-[200px] bg-gradient-to-r from-transparent via-[#84cc16] to-transparent"
+                  style={{
+                    left: "50%",
+                    top: "50%",
+                    transform: `translate(-50%, -50%) rotate(${i * 30}deg)`,
+                    transformOrigin: "center",
+                    animation: "spinLight 8s linear infinite",
+                    opacity: 0.1,
+                  }}
+                ></div>
+              ))}
+            </div>
           </div>
 
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="/bg2.png"
+              src="/bg1.png"
               alt="Background Pattern"
               fill
               className="object-cover opacity-5"
@@ -921,6 +940,9 @@ export default function Home() {
               }}
             />
           </div>
+
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 to-gray-900 z-1"></div>
 
           {/* Content */}
           <div className="container mx-auto px-6 relative z-10">
