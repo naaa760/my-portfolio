@@ -758,6 +758,7 @@ export default function Home() {
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5 }}
+                className="project-card-shadow group"
               >
                 <div className="flex justify-between items-start mb-6">
                   <div>
@@ -776,36 +777,20 @@ export default function Home() {
 
                 {/* Project Image with enhanced animation and proper fitting */}
                 <motion.div
-                  className="rounded-lg overflow-hidden shadow-2xl"
-                  initial={{ scale: 1 }}
-                  whileInView={{
-                    scale: [1, 0.95, 1.02, 1],
-                  }}
-                  transition={{
-                    duration: 1.2,
-                    ease: "easeInOut",
-                    times: [0, 0.3, 0.7, 1],
+                  className="relative aspect-[16/10] w-full rounded-[40px] overflow-hidden shadow-project"
+                  whileHover={{
+                    scale: 1.02,
+                    transition: { duration: 0.3 },
                   }}
                 >
-                  <div className="relative aspect-[16/10] w-full">
-                    <div className="absolute -inset-0.5 bg-gradient-to-r from-lime-500/30 to-emerald-500/30 rounded-lg blur-sm z-0"></div>
-                    <Image
-                      src="/pt6.png"
-                      alt="SilverLynx Technologies Project"
-                      fill
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      className="relative z-10"
-                      style={{
-                        display: "block",
-                        width: "100%",
-                        height: "100%",
-                        borderRadius: "inherit",
-                        objectPosition: "center center",
-                        objectFit: "cover",
-                      }}
-                      priority
-                    />
-                  </div>
+                  <Image
+                    src="/pt6.png"
+                    alt="SilverLynx Technologies Project"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
+                    priority
+                  />
                 </motion.div>
               </motion.div>
 
@@ -815,6 +800,7 @@ export default function Home() {
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, delay: 0.2 }}
+                className="project-card-shadow group"
               >
                 <div className="flex justify-between items-start mb-6">
                   <div>
@@ -833,37 +819,20 @@ export default function Home() {
 
                 {/* Project Image with enhanced animation and proper fitting */}
                 <motion.div
-                  className="rounded-lg overflow-hidden shadow-2xl"
-                  initial={{ scale: 1 }}
-                  whileInView={{
-                    scale: [1, 0.95, 1.02, 1],
-                  }}
-                  transition={{
-                    duration: 1.2,
-                    ease: "easeInOut",
-                    times: [0, 0.3, 0.7, 1],
-                    delay: 0.1,
+                  className="relative aspect-[16/10] w-full rounded-[40px] overflow-hidden shadow-project"
+                  whileHover={{
+                    scale: 1.02,
+                    transition: { duration: 0.3 },
                   }}
                 >
-                  <div className="relative aspect-[16/10] w-full">
-                    <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-500/30 to-lime-500/30 rounded-lg blur-sm z-0"></div>
-                    <Image
-                      src="/pt1.png"
-                      alt="Evergreen Solutions Project"
-                      fill
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      className="relative z-10"
-                      style={{
-                        display: "block",
-                        width: "100%",
-                        height: "100%",
-                        borderRadius: "inherit",
-                        objectPosition: "center center",
-                        objectFit: "cover",
-                      }}
-                      priority
-                    />
-                  </div>
+                  <Image
+                    src="/pt1.png"
+                    alt="Evergreen Solutions Project"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
+                    priority
+                  />
                 </motion.div>
               </motion.div>
             </div>
@@ -989,6 +958,7 @@ export default function Home() {
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5 }}
+                className="project-card-shadow group"
               >
                 <div className="flex justify-between items-start mb-4">
                   <div>
@@ -1005,36 +975,19 @@ export default function Home() {
 
                 {/* Project Image */}
                 <motion.div
-                  className="rounded-lg overflow-hidden shadow-2xl"
-                  initial={{ scale: 1 }}
-                  whileInView={{
-                    scale: [1, 0.95, 1.02, 1],
-                  }}
-                  transition={{
-                    duration: 1.2,
-                    ease: "easeInOut",
-                    times: [0, 0.3, 0.7, 1],
+                  className="relative aspect-[16/10] w-full rounded-[40px] overflow-hidden shadow-project"
+                  whileHover={{
+                    scale: 1.02,
+                    transition: { duration: 0.3 },
                   }}
                 >
-                  <div className="relative aspect-[16/10] w-full">
-                    <div className="absolute -inset-0.5 bg-gradient-to-r from-lime-500/30 to-emerald-500/30 rounded-lg blur-sm z-0"></div>
-                    <Image
-                      src="/pt2.png"
-                      alt="EchoStream Entertainment Project"
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="relative z-10"
-                      style={{
-                        display: "block",
-                        width: "100%",
-                        height: "100%",
-                        borderRadius: "inherit",
-                        objectPosition: "center center",
-                        objectFit: "cover",
-                      }}
-                      priority
-                    />
-                  </div>
+                  <Image
+                    src="/pt2.png"
+                    alt="EchoStream Entertainment Project"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
                 </motion.div>
               </motion.div>
 
@@ -1044,6 +997,7 @@ export default function Home() {
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, delay: 0.1 }}
+                className="project-card-shadow group"
               >
                 <div className="flex justify-between items-start mb-4">
                   <div>
@@ -1062,36 +1016,19 @@ export default function Home() {
 
                 {/* Project Image */}
                 <motion.div
-                  className="rounded-lg overflow-hidden shadow-2xl"
-                  initial={{ scale: 1 }}
-                  whileInView={{
-                    scale: [1, 0.95, 1.02, 1],
-                  }}
-                  transition={{
-                    duration: 1.2,
-                    ease: "easeInOut",
-                    times: [0, 0.3, 0.7, 1],
+                  className="relative aspect-[16/10] w-full rounded-[40px] overflow-hidden shadow-project"
+                  whileHover={{
+                    scale: 1.02,
+                    transition: { duration: 0.3 },
                   }}
                 >
-                  <div className="relative aspect-[16/10] w-full">
-                    <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-500/30 to-lime-500/30 rounded-lg blur-sm z-0"></div>
-                    <Image
-                      src="/pt3.png"
-                      alt="PulseTech Innovations Project"
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="relative z-10"
-                      style={{
-                        display: "block",
-                        width: "100%",
-                        height: "100%",
-                        borderRadius: "inherit",
-                        objectPosition: "center center",
-                        objectFit: "cover",
-                      }}
-                      priority
-                    />
-                  </div>
+                  <Image
+                    src="/pt3.png"
+                    alt="PulseTech Innovations Project"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
                 </motion.div>
               </motion.div>
 
@@ -1104,13 +1041,26 @@ export default function Home() {
                 className="relative group lg:col-span-1"
               >
                 <Link href="/projects" className="block h-full">
-                  <div className="relative aspect-[16/10] w-full rounded-lg overflow-hidden bg-[#84cc16] h-full">
+                  <div className="relative aspect-[16/10] w-full rounded-lg overflow-hidden h-full">
+                    {/* Background Image */}
+                    <Image
+                      src="/eye.jpg"
+                      alt="Eye Background"
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      priority
+                    />
+
+                    {/* Overlay */}
+                    <div className="absolute inset-0 bg-black/40 transition-opacity duration-300 group-hover:bg-black/20" />
+
+                    {/* Content */}
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="flex flex-col items-center space-y-4">
-                        <span className="text-gray-900 text-2xl font-medium">
+                        <span className="text-white text-2xl font-medium">
                           View all projects
                         </span>
-                        <div className="bg-gray-900 rounded-full p-2">
+                        <div className="bg-white/10 backdrop-blur-sm rounded-full p-2">
                           <motion.div
                             initial={{ x: 0 }}
                             whileHover={{ x: 5 }}
@@ -1118,7 +1068,7 @@ export default function Home() {
                           >
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
-                              className="h-6 w-6 text-[#84cc16]"
+                              className="h-6 w-6 text-white"
                               fill="none"
                               viewBox="0 0 24 24"
                               stroke="currentColor"
@@ -1134,9 +1084,6 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-
-                    {/* Hover Effect Overlay */}
-                    <div className="absolute inset-0 bg-[#65a30d] opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
                   </div>
                 </Link>
               </motion.div>
