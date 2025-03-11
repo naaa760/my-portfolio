@@ -124,7 +124,7 @@ export default function Home() {
             duration: 0.4,
             ease: "easeInOut",
           }}
-          className="flex justify-between items-center px-8 py-4 mx-6 mt-4 rounded-[30px] relative overflow-hidden z-50 w-auto"
+          className="flex justify-between items-center px-4 md:px-8 py-4 mx-2 md:mx-6 mt-4 rounded-[30px] relative overflow-hidden z-50 w-auto"
           style={{
             backdropFilter: "blur(5px)",
             border: "1px solid rgba(255, 255, 255, 0.1)",
@@ -140,23 +140,27 @@ export default function Home() {
             <span className="text-sm font-medium text-gray-800">PortFolio</span>
           </div>
 
-          <nav className="hidden md:flex space-x-6 relative z-10">
+          <nav className="flex space-x-3 relative z-10">
             <Link href="/projects">
-              <span className="neu-button neu-button-nav">Projects</span>
+              <span className="neu-button neu-button-nav text-xs md:text-sm">
+                Projects
+              </span>
             </Link>
 
             <Link href="/experience">
-              <span className="neu-button neu-button-nav">Experience</span>
+              <span className="neu-button neu-button-nav text-xs md:text-sm">
+                Experience
+              </span>
             </Link>
           </nav>
 
           <div className="flex items-center relative z-10">
-            <span className="text-[10px] mr-4 hidden md:inline text-gray-700">
+            <span className="text-[10px] mr-2 md:mr-4 hidden sm:inline text-gray-700">
               Email: nehaprasad27118@gmail.com
             </span>
             <Link
               href="/contact"
-              className="bg-transparent border border-gray-300 text-gray-800 px-4 py-1.5 rounded-full text-[10px] hover:bg-lime-500 hover:text-white hover:border-lime-500 transition-all duration-300"
+              className="bg-transparent border border-gray-300 text-gray-800 px-3 md:px-4 py-1.5 rounded-full text-[10px] hover:bg-lime-500 hover:text-white hover:border-lime-500 transition-all duration-300"
             >
               Contact me
             </Link>
