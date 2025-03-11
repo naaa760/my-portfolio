@@ -378,14 +378,12 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Featured Projects Section - Dark Theme */}
         <motion.section
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
           className="w-full bg-gray-900 text-white py-20 mt-20 relative overflow-hidden"
         >
-          {/* Background SVG Pattern with rotation animation */}
           <div className="absolute inset-0 opacity-10">
             <svg
               width="100%"
@@ -399,7 +397,6 @@ export default function Home() {
                   <stop offset="100%" stopColor="#10b981" stopOpacity="0.7" />
                 </linearGradient>
 
-                {/* Add animation for rotation */}
                 <animateTransform
                   xlinkHref="#petalGroup"
                   attributeName="transform"
@@ -412,9 +409,7 @@ export default function Home() {
                 />
               </defs>
 
-              {/* Large flower/petal pattern with ID for animation */}
               <g id="petalGroup" transform="translate(500, 500)">
-                {/* Petals remain the same */}
                 <path
                   d="M0,-400 C100,-300 100,-100 0,0 C-100,-100 -100,-300 0,-400"
                   fill="none"
@@ -422,7 +417,7 @@ export default function Home() {
                   strokeWidth="1.5"
                   transform="rotate(0)"
                 />
-                {/* Petal 2 */}
+
                 <path
                   d="M0,-400 C100,-300 100,-100 0,0 C-100,-100 -100,-300 0,-400"
                   fill="none"
@@ -430,7 +425,7 @@ export default function Home() {
                   strokeWidth="1.5"
                   transform="rotate(45)"
                 />
-                {/* Petal 3 */}
+
                 <path
                   d="M0,-400 C100,-300 100,-100 0,0 C-100,-100 -100,-300 0,-400"
                   fill="none"
@@ -438,7 +433,7 @@ export default function Home() {
                   strokeWidth="1.5"
                   transform="rotate(90)"
                 />
-                {/* Petal 4 */}
+
                 <path
                   d="M0,-400 C100,-300 100,-100 0,0 C-100,-100 -100,-300 0,-400"
                   fill="none"
@@ -446,7 +441,7 @@ export default function Home() {
                   strokeWidth="1.5"
                   transform="rotate(135)"
                 />
-                {/* Petal 5 */}
+
                 <path
                   d="M0,-400 C100,-300 100,-100 0,0 C-100,-100 -100,-300 0,-400"
                   fill="none"
@@ -454,7 +449,7 @@ export default function Home() {
                   strokeWidth="1.5"
                   transform="rotate(180)"
                 />
-                {/* Petal 6 */}
+
                 <path
                   d="M0,-400 C100,-300 100,-100 0,0 C-100,-100 -100,-300 0,-400"
                   fill="none"
@@ -462,7 +457,7 @@ export default function Home() {
                   strokeWidth="1.5"
                   transform="rotate(225)"
                 />
-                {/* Petal 7 */}
+
                 <path
                   d="M0,-400 C100,-300 100,-100 0,0 C-100,-100 -100,-300 0,-400"
                   fill="none"
@@ -470,7 +465,7 @@ export default function Home() {
                   strokeWidth="1.5"
                   transform="rotate(270)"
                 />
-                {/* Petal 8 */}
+
                 <path
                   d="M0,-400 C100,-300 100,-100 0,0 C-100,-100 -100,-300 0,-400"
                   fill="none"
@@ -480,7 +475,6 @@ export default function Home() {
                 />
               </g>
 
-              {/* Circles remain the same */}
               <circle
                 cx="500"
                 cy="500"
@@ -490,7 +484,6 @@ export default function Home() {
                 strokeWidth="1"
               />
 
-              {/* Middle circle with reverse rotation */}
               <circle
                 cx="500"
                 cy="500"
@@ -510,7 +503,6 @@ export default function Home() {
                 />
               </circle>
 
-              {/* Outer circle */}
               <circle
                 cx="500"
                 cy="500"
@@ -527,17 +519,30 @@ export default function Home() {
             {/* Featured Projects Tag */}
             <div className="flex items-center mb-6">
               <div className="w-2 h-2 rounded-full bg-lime-400 mr-2"></div>
-              <span className="text-sm text-lime-400">
-                [01] — Featured projects
-              </span>
+              <span className="text-sm text-lime-400">About Me</span>
             </div>
 
             {/* Main Heading */}
-            <h2 className="text-5xl md:text-6xl font-light mb-16 max-w-3xl">
-              I blend creativity with technical expertise
+            <h2 className="text-2xl md:text-2xl font-light mb-16 max-w-3xl leading-relaxed text-gray-300">
+              Hi, I am Neha Prasad, a frontend developer in my final year of
+              college. I started my journey with HTML, CSS, and JavaScript,
+              learning from tutorials and diving deeper through connections on
+              platforms like Twitter and LinkedIn.
+              <br />
+              <br />
+              Over time, I have worked on projects implementing features like
+              JWT authentication, Clerk integrations, and CRUD operations, which
+              taught me how to handle large-scale applications and collaborate
+              effectively.
+              <br />
+              <br />I have interned at two companies, gaining experience in
+              teamwork and solving real-world problems. Hackathons and
+              open-source contributions are a big part of my growth—I love
+              exploring codebases, fixing bugs, and adding features. I am
+              adaptable, quick to learn, and thrive in dynamic, problem-solving
+              environments.
             </h2>
 
-            {/* CTA Button with Glow Effect */}
             <div className="relative inline-block group">
               <div className="absolute -inset-1 bg-gradient-to-r from-lime-500 to-lime-300 rounded-full blur-md opacity-70 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
               <button className="relative bg-lime-400 hover:bg-lime-500 text-gray-900 font-medium py-3 px-8 rounded-full flex items-center transition-all duration-300">
@@ -557,57 +562,6 @@ export default function Home() {
                   />
                 </svg>
               </button>
-            </div>
-
-            {/* Project Cards - Will appear when scrolling down */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-32">
-              {/* Project Card 1 */}
-              <motion.div
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.5 }}
-                className="border-t border-gray-700 pt-6"
-              >
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <span className="text-sm text-gray-400">
-                      [ Pottery artist portfolio ]
-                    </span>
-                    <h3 className="text-2xl font-medium mt-2">
-                      SilverLynx Technologies
-                    </h3>
-                  </div>
-                  <span className="text-sm text-gray-400">5/31/24</span>
-                </div>
-                <p className="text-gray-400 text-sm mb-3">
-                  Web design & Web development
-                </p>
-              </motion.div>
-
-              {/* Project Card 2 */}
-              <motion.div
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="border-t border-gray-700 pt-6"
-              >
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <span className="text-sm text-gray-400">
-                      [ Artist Portfolio ]
-                    </span>
-                    <h3 className="text-2xl font-medium mt-2">
-                      Evergreen Solutions
-                    </h3>
-                  </div>
-                  <span className="text-sm text-gray-400">8/8/24</span>
-                </div>
-                <p className="text-gray-400 text-sm mb-3">
-                  Web design & Web development
-                </p>
-              </motion.div>
             </div>
           </div>
         </motion.section>
@@ -1225,7 +1179,7 @@ export default function Home() {
               viewBox="0 0 100 100"
             >
               <path
-                d="M50 0 C50 50, 100 50, 100 50 C50 50, 50 100, 50 100 C50 50, 0 50, 0 50 C50 50, 50 0, 50 0"
+                d="M50 0 C50 50, 100 50, 100 50 C50 50, 50 100, 50 100 C50 50, 0 50, 0"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="0.5"
