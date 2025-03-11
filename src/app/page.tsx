@@ -516,13 +516,11 @@ export default function Home() {
           </div>
 
           <div className="container mx-auto px-6 relative z-10">
-            {/* Featured Projects Tag */}
             <div className="flex items-center mb-6">
               <div className="w-2 h-2 rounded-full bg-lime-400 mr-2"></div>
               <span className="text-sm text-lime-400">About Me</span>
             </div>
 
-            {/* Main Heading */}
             <h2 className="text-2xl md:text-2xl font-light mb-16 max-w-3xl leading-relaxed text-gray-300">
               Hi, I am Neha Prasad, a frontend developer in my final year of
               college. I started my journey with HTML, CSS, and JavaScript,
@@ -566,20 +564,16 @@ export default function Home() {
           </div>
         </motion.section>
 
-        {/* Portfolio Showcase Section - With Project Images */}
         <motion.section
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7 }}
           className="w-full bg-gray-900 text-white py-12 relative overflow-hidden border-t border-gray-800"
         >
-          {/* Light Effect Layer */}
           <div className="absolute inset-0 z-0">
-            {/* Radial Gradient Lights - More Subtle */}
             <div className="absolute top-1/3 left-1/3 w-[500px] h-[500px] bg-[#84cc16] opacity-[0.03] rounded-full blur-[150px] animate-pulse"></div>
             <div className="absolute bottom-1/3 right-1/3 w-[400px] h-[400px] bg-[#84cc16] opacity-[0.02] rounded-full blur-[130px] animate-pulse delay-1000"></div>
 
-            {/* Circular Rolling Light - Fixed Position */}
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px]">
               {[...Array(12)].map((_, i) => (
                 <div
@@ -598,7 +592,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <Image
               src="/bg1.png"
@@ -613,12 +606,9 @@ export default function Home() {
             />
           </div>
 
-          {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 to-gray-900 z-1"></div>
 
-          {/* Content */}
           <div className="container mx-auto px-6 relative z-10">
-            {/* Star Background Effect for Content Area */}
             <div className="absolute inset-0 star-field-content">
               {Array.from({ length: 50 }).map((_, i) => (
                 <div
@@ -647,15 +637,12 @@ export default function Home() {
               ))}
             </div>
 
-            {/* Section Tag */}
             <div className="flex items-center mb-6 relative z-20">
               <div className="w-2 h-2 rounded-full bg-lime-400 mr-2"></div>
-              <span className="text-sm text-lime-400">[02] — Recent work</span>
+              <span className="text-sm text-lime-400">Recent work</span>
             </div>
 
-            {/* Project Cards with Images */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mt-20">
-              {/* Project Card 1 with Image */}
               <motion.div
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
@@ -665,20 +652,13 @@ export default function Home() {
               >
                 <div className="flex justify-between items-start mb-6">
                   <div>
-                    <span className="text-sm text-lime-400">
-                      [ Pottery artist portfolio ]
-                    </span>
-                    <h3 className="text-3xl font-medium mt-2">
-                      SilverLynx Technologies
-                    </h3>
+                    <h3 className="text-3xl font-medium mt-2">TimeBank</h3>
                   </div>
-                  <span className="text-sm text-gray-400">5/31/24</span>
                 </div>
                 <p className="text-gray-400 text-sm mb-8">
                   Web design & Web development
                 </p>
 
-                {/* Project Image with enhanced animation and proper fitting */}
                 <motion.div
                   className="relative aspect-[16/10] w-full rounded-[40px] overflow-hidden shadow-project"
                   whileHover={{
@@ -697,7 +677,6 @@ export default function Home() {
                 </motion.div>
               </motion.div>
 
-              {/* Project Card 2 with Image */}
               <motion.div
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
@@ -707,20 +686,13 @@ export default function Home() {
               >
                 <div className="flex justify-between items-start mb-6">
                   <div>
-                    <span className="text-sm text-lime-400">
-                      [ Artist Portfolio ]
-                    </span>
-                    <h3 className="text-3xl font-medium mt-2">
-                      Evergreen Solutions
-                    </h3>
+                    <h3 className="text-3xl font-medium mt-2">TalkCast</h3>
                   </div>
-                  <span className="text-sm text-gray-400">8/8/24</span>
                 </div>
                 <p className="text-gray-400 text-sm mb-8">
                   Web design & Web development
                 </p>
 
-                {/* Project Image with enhanced animation and proper fitting */}
                 <motion.div
                   className="relative aspect-[16/10] w-full rounded-[40px] overflow-hidden shadow-project"
                   whileHover={{
@@ -766,20 +738,16 @@ export default function Home() {
           </div>
         </motion.section>
 
-        {/* Additional Projects Section */}
         <motion.section
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
           className="w-full bg-gray-900 text-white py-12 relative overflow-hidden border-t border-gray-800"
         >
-          {/* Light Effect Layer */}
           <div className="absolute inset-0 z-0">
-            {/* Radial Gradient Lights - More Subtle */}
             <div className="absolute top-1/3 left-1/3 w-[500px] h-[500px] bg-[#84cc16] opacity-[0.03] rounded-full blur-[150px] animate-pulse"></div>
             <div className="absolute bottom-1/3 right-1/3 w-[400px] h-[400px] bg-[#84cc16] opacity-[0.02] rounded-full blur-[130px] animate-pulse delay-1000"></div>
 
-            {/* Circular Rolling Light */}
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px]">
               {[...Array(12)].map((_, i) => (
                 <div
@@ -813,12 +781,9 @@ export default function Home() {
             />
           </div>
 
-          {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 to-gray-900 z-1"></div>
 
-          {/* Content */}
           <div className="container mx-auto px-6 relative z-10">
-            {/* Star Background Effect for Content Area */}
             <div className="absolute inset-0 star-field-content">
               {Array.from({ length: 50 }).map((_, i) => (
                 <div
@@ -847,15 +812,12 @@ export default function Home() {
               ))}
             </div>
 
-            {/* Section Tag */}
             <div className="flex items-center mb-6 relative z-20">
               <div className="w-2 h-2 rounded-full bg-lime-400 mr-2"></div>
               <span className="text-sm text-lime-400">[03] — More work</span>
             </div>
 
-            {/* Project Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16 relative z-20">
-              {/* Project Card 1 */}
               <motion.div
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
@@ -865,18 +827,11 @@ export default function Home() {
               >
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <span className="text-sm text-lime-400">
-                      [ Mobile app ]
-                    </span>
-                    <h3 className="text-2xl font-medium mt-2">
-                      EchoStream Entertainment
-                    </h3>
+                    <h3 className="text-2xl font-medium mt-2">JINova</h3>
                   </div>
-                  <span className="text-sm text-gray-400">6/20/24</span>
                 </div>
-                <p className="text-gray-400 text-sm mb-6">UI/UX design</p>
+                <p className="text-gray-400 text-sm mb-6">JIRA like Project</p>
 
-                {/* Project Image */}
                 <motion.div
                   className="relative aspect-[16/10] w-full rounded-[40px] overflow-hidden shadow-project"
                   whileHover={{
@@ -894,7 +849,6 @@ export default function Home() {
                 </motion.div>
               </motion.div>
 
-              {/* Project Card 2 */}
               <motion.div
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
@@ -904,20 +858,15 @@ export default function Home() {
               >
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <span className="text-sm text-lime-400">
-                      [ Boutique E-commerce Store ]
-                    </span>
                     <h3 className="text-2xl font-medium mt-2">
-                      PulseTech Innovations
+                      Permisonless Airdrop
                     </h3>
                   </div>
-                  <span className="text-sm text-gray-400">7/13/24</span>
                 </div>
                 <p className="text-gray-400 text-sm mb-6">
-                  Web design & Web development
+                  Web3 & Web development
                 </p>
 
-                {/* Project Image */}
                 <motion.div
                   className="relative aspect-[16/10] w-full rounded-[40px] overflow-hidden shadow-project"
                   whileHover={{
@@ -935,7 +884,6 @@ export default function Home() {
                 </motion.div>
               </motion.div>
 
-              {/* View All Projects Card */}
               <motion.div
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
@@ -945,7 +893,6 @@ export default function Home() {
               >
                 <Link href="/projects" className="block h-full">
                   <div className="relative aspect-[16/10] w-full rounded-lg overflow-hidden h-full">
-                    {/* Background Image */}
                     <Image
                       src="/eye.jpg"
                       alt="Eye Background"
@@ -954,10 +901,8 @@ export default function Home() {
                       priority
                     />
 
-                    {/* Overlay */}
                     <div className="absolute inset-0 bg-black/40 transition-opacity duration-300 group-hover:bg-black/20" />
 
-                    {/* Content */}
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="flex flex-col items-center space-y-4">
                         <span className="text-white text-2xl font-medium">
@@ -994,14 +939,12 @@ export default function Home() {
           </div>
         </motion.section>
 
-        {/* Contact Section with Background Image */}
         <motion.section
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.9 }}
           className="w-full bg-white text-gray-900 py-20 relative overflow-hidden"
         >
-          {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <Image
               src="/pg.jpg"
@@ -1013,7 +956,6 @@ export default function Home() {
             />
           </div>
 
-          {/* Content */}
           <div className="container mx-auto px-6 relative z-10">
             {/* Section Tag with Enhanced Glow */}
             <div className="flex items-center mb-6">
@@ -1021,12 +963,11 @@ export default function Home() {
                 <div className="absolute w-4 h-4 -inset-1 bg-[#84cc16] opacity-75 blur-sm rounded-full"></div>
               </div>
               <span className="text-sm text-[#84cc16] relative">
-                <span className="relative z-10">[06] — Contact me</span>
+                <span className="relative z-10">Contact me</span>
                 <span className="absolute inset-0 bg-[#84cc16] opacity-25 blur-[2px]"></span>
               </span>
             </div>
 
-            {/* Section Title with Cursive Font and Glow */}
             <h2
               className={`${dancingScript.className} text-[72px] mb-20 max-w-4xl relative text-gray-800 leading-tight`}
             >
@@ -1040,9 +981,7 @@ export default function Home() {
               <span className="absolute inset-0 bg-gradient-to-r from-[#84cc16] to-transparent opacity-10 blur-xl"></span>
             </h2>
 
-            {/* Social Links Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Social Media Cards with Enhanced Glow */}
               {[
                 { name: "Twitter/X", url: "https://x.com/nehaaaa_6" },
                 {
@@ -1081,7 +1020,6 @@ export default function Home() {
                 </Link>
               ))}
 
-              {/* Get in touch with Enhanced Glow */}
               <Link
                 href="mailto:nehaprasad27118@gmail.com"
                 className="bg-[#84cc16] rounded-2xl p-8 col-span-2 relative group cursor-pointer overflow-hidden"
@@ -1112,13 +1050,11 @@ export default function Home() {
           </div>
         </motion.section>
 
-        {/* Video Section */}
         <motion.section
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           className="w-full relative overflow-hidden"
         >
-          {/* Background with Image */}
           <div className="absolute inset-0">
             <Image
               src="/fl.jpg"
@@ -1130,7 +1066,6 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
           </div>
 
-          {/* Content */}
           <div className="container mx-auto px-6 relative z-10">
             <div className="max-w-xl mx-auto">
               <div className="grid grid-cols-1 gap-8">
@@ -1157,9 +1092,7 @@ export default function Home() {
           </div>
         </motion.section>
 
-        {/* Skills Section with Leaves Pattern */}
         <section className="w-full py-20 relative overflow-hidden">
-          {/* Background Pattern */}
           <div className="absolute inset-0">
             <Image
               src="/fl.jpg"
@@ -1171,9 +1104,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/90 to-white/95"></div>
           </div>
 
-          {/* Gray Spirals */}
           <div className="absolute inset-0 overflow-hidden">
-            {/* Top Left Spiral */}
             <svg
               className="absolute -top-20 -left-20 w-96 h-96 text-gray-200 transform rotate-45"
               viewBox="0 0 100 100"
@@ -1187,7 +1118,6 @@ export default function Home() {
               />
             </svg>
 
-            {/* Bottom Right Spiral */}
             <svg
               className="absolute -bottom-20 -right-20 w-96 h-96 text-gray-200 transform -rotate-45"
               viewBox="0 0 100 100"
@@ -1201,7 +1131,6 @@ export default function Home() {
               />
             </svg>
 
-            {/* Leaves Pattern */}
             <div className="absolute inset-0">
               <svg
                 className="absolute top-0 left-0 w-32 h-32 text-lime-100/30"
@@ -1261,7 +1190,6 @@ export default function Home() {
               </h2>
             </div>
 
-            {/* Skills Tags Container with Nature-Inspired Design */}
             <div
               className="max-w-4xl mx-auto bg-white/60 backdrop-blur-md p-12 rounded-3xl border border-gray-100 
                             shadow-[0_8px_30px_rgb(0,0,0,0.04)] relative overflow-hidden"
