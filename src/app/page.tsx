@@ -307,7 +307,7 @@ export default function Home() {
                   Download CV
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/neha-prasad-92499821b/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="scroll-button"
@@ -324,7 +324,7 @@ export default function Home() {
                   LinkedIn
                 </a>
                 <a
-                  href="https://twitter.com"
+                  href="https://x.com/nehaaaa_6"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="scroll-button"
@@ -341,7 +341,7 @@ export default function Home() {
                   Twitter
                 </a>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/naaa760"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="scroll-button"
@@ -357,7 +357,7 @@ export default function Home() {
                   </svg>
                   GitHub
                 </a>
-                <a href="/contact" className="scroll-button">
+                <a href="https://x.com/nehaaaa_6" className="scroll-button">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
