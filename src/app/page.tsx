@@ -766,7 +766,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <Image
               src="/bg1.png"
@@ -957,7 +956,6 @@ export default function Home() {
           </div>
 
           <div className="container mx-auto px-6 relative z-10">
-            {/* Section Tag with Enhanced Glow */}
             <div className="flex items-center mb-6">
               <div className="w-2 h-2 rounded-full bg-[#84cc16] mr-2 animate-glow">
                 <div className="absolute w-4 h-4 -inset-1 bg-[#84cc16] opacity-75 blur-sm rounded-full"></div>
@@ -1162,9 +1160,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Content Container */}
           <div className="container mx-auto px-6 relative z-10">
-            {/* Section Title with Leaf Accent */}
             <div className="text-center mb-16 relative">
               <span className="text-sm text-lime-600 mb-2 block tracking-wider flex items-center justify-center gap-2">
                 <svg className="w-4 h-4 text-lime-500" viewBox="0 0 24 24">
