@@ -7,10 +7,7 @@ import { useEffect, useState } from "react";
 import AnimatedLoader from "./components/AnimatedLoader";
 import "./components/neuButton.css";
 import "./components/scrollButtons.css";
-import { Dancing_Script } from "next/font/google";
 import SnowEffect from "./components/SnowEffect";
-
-const dancingScript = Dancing_Script({ subsets: ["latin"] });
 
 type Video = {
   title: string;
@@ -270,9 +267,7 @@ export default function Home() {
                 </motion.div>
 
                 <div className="mt-8">
-                  <p
-                    className={`${dancingScript.className} text-2xl bg-gradient-to-r from-lime-600 via-emerald-500 to-lime-600 bg-clip-text text-transparent relative`}
-                  >
+                  <p className="font-dancing-script text-2xl bg-gradient-to-r from-lime-600 via-emerald-500 to-lime-600 bg-clip-text text-transparent relative">
                     building epic stuffs to explore more about Next.Js , AI and
                     Web3.
                     <br />I am all about exploring new tech and creating impact.
@@ -967,9 +962,7 @@ export default function Home() {
               </span>
             </div>
 
-            <h2
-              className={`${dancingScript.className} relative mb-20 max-w-4xl`}
-            >
+            <h2 className="font-dancing-script relative mb-20 max-w-4xl">
               <span className="text-6xl md:text-7xl bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-gray-600 relative z-10">
                 I am all over
                 <br />
