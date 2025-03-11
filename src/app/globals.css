@@ -459,3 +459,80 @@ body {
     opacity: 0.3;
   }
 }
+
+/* Enhanced Experience Page Effects */
+.experience-section {
+  position: relative;
+}
+
+.experience-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(to bottom, rgba(132, 204, 22, 0.05), transparent);
+  z-index: -1;
+}
+
+.education-section {
+  position: relative;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.9),
+    rgba(240, 240, 240, 0.9)
+  );
+  backdrop-filter: blur(5px);
+}
+
+.education-section::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: linear-gradient(to top, rgba(240, 240, 240, 0.9), transparent);
+}
+
+.timeline-dot {
+  box-shadow: 0 0 0 4px rgba(132, 204, 22, 0.2),
+    0 0 0 8px rgba(132, 204, 22, 0.1);
+  animation: pulse-glow 3s infinite;
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 0 4px rgba(132, 204, 22, 0.2),
+      0 0 0 8px rgba(132, 204, 22, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(132, 204, 22, 0.2),
+      0 0 0 16px rgba(132, 204, 22, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 0 4px rgba(132, 204, 22, 0.2),
+      0 0 0 8px rgba(132, 204, 22, 0.1);
+  }
+}
+
+.experience-title {
+  background: linear-gradient(to right, #4ade80, #84cc16);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.skill-tag {
+  background: linear-gradient(145deg, #f0f0f0, #e6e6e6);
+  border: 1px solid rgba(132, 204, 22, 0.2);
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+  background: linear-gradient(145deg, #ecfccb, #d9f99d);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}

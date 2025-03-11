@@ -6,9 +6,21 @@ import Link from "next/link";
 
 export default function Projects() {
   return (
-    <main className="min-h-screen bg-gray-900">
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-6">
+    <main className="min-h-screen bg-gray-900 relative">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
+        <Image
+          src="/pr.jpg"
+          alt="Projects Background"
+          fill
+          className="object-cover opacity-20"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-900/90 via-gray-900/80 to-gray-900/90"></div>
+      </div>
+
+      {/* Hero Section with Enhanced Title */}
+      <section className="relative pt-32 pb-20 px-6 z-10">
         <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -16,10 +28,22 @@ export default function Projects() {
             transition={{ duration: 0.5 }}
             className="max-w-4xl mx-auto text-center"
           >
+            {/* Section Label */}
+            <div className="mb-6 inline-block">
+              <span className="text-xs text-lime-400 tracking-widest uppercase font-medium">
+                Portfolio
+              </span>
+              <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-lime-400 to-transparent mt-1"></div>
+            </div>
+
             <h1 className="text-5xl md:text-7xl font-light text-white mb-6">
-              Selected <span className="text-lime-400">Works</span>
+              Selected{" "}
+              <span className="text-lime-400 relative inline-block">
+                Works
+                <div className="absolute -bottom-2 left-0 h-[2px] w-full bg-lime-400/50"></div>
+              </span>
             </h1>
-            <p className="text-gray-400 text-lg md:text-xl">
+            <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
               A collection of projects that showcase my expertise in web design
               and development.
             </p>
@@ -27,11 +51,10 @@ export default function Projects() {
         </div>
       </section>
 
-      {/* Projects Grid */}
-      <section className="px-6 pb-32">
+      {/* Projects Grid with Enhanced Cards */}
+      <section className="px-6 pb-32 relative z-10">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-            {/* Project Cards */}
             {projects.map((project, index) => (
               <motion.div
                 key={project.id}
@@ -42,7 +65,10 @@ export default function Projects() {
                 className="project-card-shadow group"
               >
                 <div className="mb-6">
-                  <h3 className="text-3xl font-medium text-white">
+                  <span className="text-xs text-lime-400 mb-2 block">{`Project ${String(
+                    index + 1
+                  ).padStart(2, "0")}`}</span>
+                  <h3 className="text-3xl font-medium text-white group-hover:text-lime-300 transition-colors duration-300">
                     {project.title}
                   </h3>
                 </div>
@@ -50,36 +76,50 @@ export default function Projects() {
                   {project.description}
                 </p>
 
-                {/* Project Image with Link */}
+                {/* Project Image with Enhanced Link */}
                 <Link
                   href={project.link || "#"}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block transition-transform duration-300 hover:scale-[1.02]"
+                  className="block transition-all duration-500 hover:-translate-y-2"
                 >
-                  <div className="relative aspect-[16/10] w-full rounded-[40px] overflow-hidden shadow-project">
+                  <div className="relative aspect-[16/10] w-full rounded-[40px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
                     <Image
                       src={project.image}
                       alt={project.title}
                       fill
-                      className="object-cover"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
                       priority
                     />
                     {/* Hover Overlay */}
-                    <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <span className="text-white text-sm font-medium px-4 py-2 rounded-full bg-lime-500/80 backdrop-blur-sm">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <span className="text-white text-sm font-medium px-6 py-3 rounded-full bg-lime-500/90 backdrop-blur-sm flex items-center gap-2">
                         View Project
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-4 w-4"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"
+                          />
+                        </svg>
                       </span>
                     </div>
                   </div>
                 </Link>
 
-                {/* Technologies Used */}
+                {/* Technologies Used with Enhanced Style */}
                 <div className="mt-8 flex flex-wrap gap-3">
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm"
+                      className="px-3 py-1 bg-gray-800/80 text-gray-300 rounded-full text-xs border border-gray-700 backdrop-blur-sm hover:bg-lime-900/50 hover:text-lime-300 hover:border-lime-700 transition-all duration-300"
                     >
                       {tech}
                     </span>
@@ -91,16 +131,21 @@ export default function Projects() {
         </div>
       </section>
 
-      {/* Back to Home */}
+      {/* Decorative Elements */}
+      <div className="absolute top-40 left-10 w-64 h-64 rounded-full bg-lime-500/10 blur-3xl z-0"></div>
+      <div className="absolute bottom-40 right-10 w-80 h-80 rounded-full bg-lime-500/10 blur-3xl z-0"></div>
+      <div className="absolute top-[40%] right-[30%] w-40 h-40 rounded-full bg-emerald-500/10 blur-3xl z-0"></div>
+
+      {/* Enhanced Back to Home Button */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
-        className="fixed bottom-8 right-8"
+        className="fixed bottom-8 right-8 z-50"
       >
         <Link
           href="/"
-          className="bg-lime-400 hover:bg-lime-500 text-gray-900 px-6 py-3 rounded-full flex items-center gap-2 transition-colors"
+          className="bg-lime-400 hover:bg-lime-500 text-gray-900 px-6 py-3 rounded-full flex items-center gap-2 transition-all duration-300 shadow-[0_0_15px_rgba(132,204,22,0.3)]"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

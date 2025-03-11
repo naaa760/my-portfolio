@@ -11,6 +11,51 @@ import { Dancing_Script } from "next/font/google";
 
 const dancingScript = Dancing_Script({ subsets: ["latin"] });
 
+type Video = {
+  title: string;
+  description: string;
+  thumbnail: string;
+  link: string;
+};
+
+type Skill = {
+  name: string;
+  level: number;
+};
+
+type SkillCategory = {
+  name: string;
+  skills: Skill[];
+};
+
+const videos: Video[] = [
+  {
+    title: "Portfolio Showcase",
+    description: "A walkthrough of my projects and skills",
+    thumbnail: "/video1.jpg",
+    link: "https://www.loom.com/embed/c7453e34ae9d47c3840aa187f926a6ed?sid=51a68db9-ca89-4b24-959d-75de1f2b1866",
+  },
+];
+
+const skillCategories: SkillCategory[] = [
+  {
+    name: "Frontend",
+    skills: [
+      { name: "React/Next.js", level: 95 },
+      { name: "TypeScript", level: 90 },
+      { name: "Tailwind CSS", level: 95 },
+    ],
+  },
+  {
+    name: "Backend",
+    skills: [
+      { name: "Node.js", level: 85 },
+      { name: "Express", level: 80 },
+      { name: "PostgreSQL", level: 75 },
+    ],
+  },
+];
+
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
 
@@ -18,7 +63,6 @@ export default function Home() {
     const handleScroll = () => {
       setScrollY(window.scrollY);
 
-      // Change scroll speed based on scroll position
       const scrollContainer = document.querySelector(".scroll-buttons");
       if (scrollContainer) {
         if (window.scrollY > 300) {
@@ -55,7 +99,6 @@ export default function Home() {
       animate={{ opacity: 1 }}
       className="min-h-screen bg-white relative"
     >
-      {/* Background Image */}
       <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
         <Image
           src="/bg.jpg"
@@ -66,7 +109,6 @@ export default function Home() {
         />
       </div>
 
-      {/* Content Container */}
       <div className="relative z-10">
         <motion.header
           initial={{ y: -100, opacity: 0 }}
@@ -91,14 +133,13 @@ export default function Home() {
             borderRadius: "30px",
           }}
         >
-          {/* Dark green glow effects */}
           <div className="absolute -top-10 -left-10 w-24 h-24 rounded-full bg-green-700 opacity-15 blur-xl"></div>
           <div className="absolute bottom-0 left-1/3 w-16 h-16 rounded-full bg-green-800 opacity-10 blur-xl"></div>
           <div className="absolute -bottom-10 -right-10 w-20 h-20 rounded-full bg-green-600 opacity-15 blur-xl"></div>
 
           <div className="flex items-center relative z-10">
             <span className="text-green-600 text-base font-bold mr-2">✕</span>
-            <span className="text-sm font-medium text-gray-800">Webstack</span>
+            <span className="text-sm font-medium text-gray-800">PortFolio</span>
           </div>
 
           <nav className="hidden md:flex space-x-6 relative z-10">
@@ -109,15 +150,11 @@ export default function Home() {
             <Link href="/experience">
               <span className="neu-button neu-button-nav">Experience</span>
             </Link>
-
-            <Link href="/about">
-              <span className="neu-button neu-button-nav">About & Contact</span>
-            </Link>
           </nav>
 
           <div className="flex items-center relative z-10">
             <span className="text-[10px] mr-4 hidden md:inline text-gray-700">
-              Email: hello@andrew.design
+              Email: nehaprasad27118@gmail.com
             </span>
             <Link
               href="/contact"
@@ -130,7 +167,6 @@ export default function Home() {
 
         <div className="flex flex-col px-6 md:px-12 lg:px-20 py-10 md:py-14 lg:py-16">
           <div className="w-full">
-            {/* Availability Badge */}
             <motion.div
               initial={{ y: -10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -139,23 +175,18 @@ export default function Home() {
             >
               <div className="inline-flex items-center">
                 <span className="h-2 w-2 bg-lime-400 rounded-full mr-2"></span>
-                <span className="text-xs text-gray-600">
-                  Available for freelance
-                </span>
+                <span className="text-xs text-gray-600">Available for Job</span>
               </div>
             </motion.div>
 
             <div className="flex flex-col md:flex-row">
-              {/* Left Side - Circles and Social */}
               <motion.div
                 initial={{ x: -50, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: 0.6 }}
                 className="w-full md:w-1/3"
               >
-                {/* Stacked Circle Design */}
                 <div className="flex mb-8 ml-12">
-                  {/* Profile Image Circle */}
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     className="relative w-32 h-32 rounded-full overflow-hidden"
@@ -169,7 +200,6 @@ export default function Home() {
                     />
                   </motion.div>
 
-                  {/* Single Decorative Circle */}
                   <motion.div
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 0.9 }}
@@ -190,13 +220,11 @@ export default function Home() {
                   />
                 </div>
 
-                {/* Animated Loader */}
                 <div className="relative ml-12">
                   <AnimatedLoader />
                 </div>
               </motion.div>
 
-              {/* Right Side - Main Content */}
               <motion.div
                 initial={{ x: 50, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
@@ -207,17 +235,16 @@ export default function Home() {
                   initial={{ y: 30, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 1 }}
-                  className="text-3xl md:text-5xl font-medium leading-tight text-gray-900 mb-8 framer-text framer-styles-preset-1rbt0vf"
-                  data-styles-preset="Ef9x12Hcq"
+                  className="text-4xl md:text-5xl font-normal leading-tight mb-8"
                 >
                   <h1>
                     <motion.span
                       whileHover={{ scale: 1.02 }}
-                      className="inline-block"
+                      className="inline-block text-[#2d2d2d] drop-shadow-[0_4px_4px_rgba(0,0,0,0.05)] [text-shadow:_0_1px_0_rgb(0_0_0_/_5%)]"
                     >
                       Hi! I am{" "}
                       <span className="neu-button neu-button-name">
-                        Andrew Scott
+                        NEHA PRASAD
                       </span>
                     </motion.span>
                     <br />
@@ -225,34 +252,30 @@ export default function Home() {
                       whileHover={{ scale: 1.02 }}
                       className="inline-block"
                     >
-                      a{" "}
+                      <span className="text-[#2d2d2d]">a</span>{" "}
                       <span className="neu-button neu-button-title">
-                        Digital Designer
+                        Software Developer
                       </span>
                     </motion.span>
                     <br />
-                    from{" "}
-                    <span className="neu-button neu-button-name">Boston</span>
+                    <span className="text-[#2d2d2d]">from</span>{" "}
+                    <span className="neu-button neu-button-name">India</span>
                     <br />
-                    turning your ideas into
-                    <br />
-                    pixel-perfect realities
+                    <span className="text-[#2d2d2d] drop-shadow-[0_4px_4px_rgba(0,0,0,0.05)] [text-shadow:_0_1px_0_rgb(0_0_0_/_5%)]">
+                      Each idea holds
+                      <br />a unique power
+                    </span>
                   </h1>
                 </motion.div>
 
                 <div className="mt-8">
-                  <div
-                    className="text-gray-600 mb-1 text-xs framer-text framer-styles-preset-1rbt0vf"
-                    data-styles-preset="Ef9x12Hcq"
-                  >
-                    (2018 - PRESENT)
-                  </div>
                   <p
-                    className="text-sm text-gray-700 max-w-3xl framer-text framer-styles-preset-1rbt0vf"
-                    data-styles-preset="Ef9x12Hcq"
+                    className={`${dancingScript.className} text-2xl bg-gradient-to-r from-lime-600 via-emerald-500 to-lime-600 bg-clip-text text-transparent relative`}
                   >
-                    I am dedicated to crafting websites that bring your ideas to
-                    life, combining modern design with seamless functionality.
+                    building epic stuffs to explore more about Next.Js , AI and
+                    Web3.
+                    <br />I am all about exploring new tech and creating impact.
+                    <span className="absolute -bottom-2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-lime-400 to-transparent"></span>
                   </p>
                 </div>
               </motion.div>
@@ -260,53 +283,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Unlock Button */}
-        <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 1.2 }}
-          className="fixed bottom-6 right-6"
-        >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-black text-white px-3 py-1 rounded-full flex items-center text-[10px]"
-          >
-            Unlock at $0
-            <svg
-              className="ml-1 w-3 h-3"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M9 5l7 7-7 7"
-              ></path>
-            </svg>
-          </motion.button>
-        </motion.div>
-
-        {/* Made in Framer Badge */}
-        <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 1.4 }}
-          className="fixed bottom-6 right-28"
-        >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-white border border-gray-200 text-gray-800 px-3 py-1 rounded-full flex items-center text-[10px]"
-          >
-            <span className="mr-1">₣</span> Made in Framer
-          </motion.button>
-        </motion.div>
-
-        {/* Scroll Buttons */}
         <div className="mt-16 mb-8 relative overflow-hidden">
           <motion.div
             initial={{ opacity: 0 }}
@@ -316,7 +292,12 @@ export default function Home() {
           >
             <div className="scroll-container">
               <div className="scroll-buttons">
-                <a href="/download-cv" className="scroll-button">
+                <a
+                  href="https://drive.google.com/file/d/1AavTgqkcOT0iknkBImakLkPWSCkopS72/view"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="scroll-button"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -391,38 +372,6 @@ export default function Home() {
                     <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
                   </svg>
                   Contact Me
-                </a>
-
-                {/* Duplicate buttons for continuous scrolling effect */}
-                <a href="/download-cv" className="scroll-button">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
-                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
-                  </svg>
-                  Download CV
-                </a>
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="scroll-button"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
-                  </svg>
-                  LinkedIn
                 </a>
               </div>
             </div>
@@ -1140,38 +1089,49 @@ export default function Home() {
             {/* Social Links Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {/* Social Media Cards with Enhanced Glow */}
-              {["Twitter/X", "Instagram", "Dribbble", "Behance"].map(
-                (platform) => (
-                  <div
-                    key={platform}
-                    className="group bg-white rounded-2xl p-8 shadow-sm border border-gray-100 relative overflow-hidden transition-all duration-300"
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#84cc16] to-transparent opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
-                    <div className="flex justify-between items-center relative">
-                      <h3 className="text-xl">{platform}</h3>
-                      <div className="bg-[#84cc16] rounded-full p-3 relative group-hover:shadow-[0_0_20px_rgba(132,204,22,0.3)] transition-all duration-300">
-                        <div className="absolute inset-0 bg-[#84cc16] rounded-full blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
-                        <svg
-                          className="w-5 h-5 relative z-10"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                        >
-                          <path
-                            d="M5 19L19 5M19 5H5M19 5V19"
-                            stroke="white"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </div>
+              {[
+                { name: "Twitter/X", url: "https://x.com/nehaaaa_6" },
+                {
+                  name: "LinkedIn",
+                  url: "https://www.linkedin.com/in/neha-prasad-92499821b/",
+                },
+                { name: "GitHub", url: "https://github.com/naaa760" },
+              ].map((platform) => (
+                <Link
+                  href={platform.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  key={platform.name}
+                  className="group bg-white rounded-2xl p-8 shadow-sm border border-gray-100 relative overflow-hidden transition-all duration-300"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#84cc16] to-transparent opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
+                  <div className="flex justify-between items-center relative">
+                    <h3 className="text-xl">{platform.name}</h3>
+                    <div className="bg-[#84cc16] rounded-full p-3 relative group-hover:shadow-[0_0_20px_rgba(132,204,22,0.3)] transition-all duration-300">
+                      <div className="absolute inset-0 bg-[#84cc16] rounded-full blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+                      <svg
+                        className="w-5 h-5 relative z-10"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M5 19L19 5M19 5H5M19 5V19"
+                          stroke="white"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
                     </div>
                   </div>
-                )
-              )}
+                </Link>
+              ))}
 
               {/* Get in touch with Enhanced Glow */}
-              <div className="bg-[#84cc16] rounded-2xl p-8 col-span-2 relative group cursor-pointer overflow-hidden">
+              <Link
+                href="mailto:nehaprasad27118@gmail.com"
+                className="bg-[#84cc16] rounded-2xl p-8 col-span-2 relative group cursor-pointer overflow-hidden"
+              >
                 <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
                 <div className="absolute -inset-1 bg-gradient-to-r from-[#84cc16] to-[#84cc16]/50 opacity-75 group-hover:opacity-100 blur-2xl transition-opacity duration-500"></div>
                 <div className="relative flex justify-between items-center">
@@ -1193,10 +1153,201 @@ export default function Home() {
                     </svg>
                   </div>
                 </div>
+              </Link>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Video Section */}
+        <motion.section
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="w-full relative overflow-hidden"
+        >
+          {/* Background with Image */}
+          <div className="absolute inset-0">
+            <Image
+              src="/fl.jpg"
+              alt="Background"
+              fill
+              className="object-cover opacity-30"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
+          </div>
+
+          {/* Content */}
+          <div className="container mx-auto px-6 relative z-10">
+            <div className="max-w-xl mx-auto">
+              <div className="grid grid-cols-1 gap-8">
+                {videos.map((video, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    className="group relative h-[200px] rounded-2xl overflow-hidden shadow-2xl w-full md:w-[80%] mx-auto"
+                  >
+                    <div className="relative w-full h-full">
+                      <iframe
+                        src={video.link}
+                        frameBorder="0"
+                        allowFullScreen
+                        className="absolute top-0 left-0 w-full h-full"
+                      ></iframe>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
             </div>
           </div>
         </motion.section>
+
+        {/* Skills Section with Leaves Pattern */}
+        <section className="w-full py-20 relative overflow-hidden">
+          {/* Background Pattern */}
+          <div className="absolute inset-0">
+            <Image
+              src="/fl.jpg"
+              alt="Skills Background"
+              fill
+              className="object-cover opacity-10"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/90 to-white/95"></div>
+          </div>
+
+          {/* Gray Spirals */}
+          <div className="absolute inset-0 overflow-hidden">
+            {/* Top Left Spiral */}
+            <svg
+              className="absolute -top-20 -left-20 w-96 h-96 text-gray-200 transform rotate-45"
+              viewBox="0 0 100 100"
+            >
+              <path
+                d="M50 0 C50 50, 100 50, 100 50 C50 50, 50 100, 50 100 C50 50, 0 50, 0 50 C50 50, 50 0, 50 0"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="0.5"
+                className="animate-[spin_30s_linear_infinite]"
+              />
+            </svg>
+
+            {/* Bottom Right Spiral */}
+            <svg
+              className="absolute -bottom-20 -right-20 w-96 h-96 text-gray-200 transform -rotate-45"
+              viewBox="0 0 100 100"
+            >
+              <path
+                d="M50 0 C20 20, 80 20, 80 50 C80 80, 20 80, 50 100"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="0.5"
+                className="animate-[spin_35s_linear_infinite]"
+              />
+            </svg>
+
+            {/* Leaves Pattern */}
+            <div className="absolute inset-0">
+              <svg
+                className="absolute top-0 left-0 w-32 h-32 text-lime-100/30"
+                viewBox="0 0 100 100"
+              >
+                <path
+                  d="M50,0 Q60,40 100,50 Q60,60 50,100 Q40,60 0,50 Q40,40 50,0"
+                  fill="currentColor"
+                />
+              </svg>
+              <svg
+                className="absolute top-1/4 right-1/4 w-24 h-24 text-emerald-100/30 rotate-45"
+                viewBox="0 0 100 100"
+              >
+                <path
+                  d="M50,0 Q60,40 100,50 Q60,60 50,100 Q40,60 0,50 Q40,40 50,0"
+                  fill="currentColor"
+                />
+              </svg>
+              <svg
+                className="absolute bottom-1/3 left-1/3 w-20 h-20 text-green-100/30 -rotate-12"
+                viewBox="0 0 100 100"
+              >
+                <path
+                  d="M50,0 Q60,40 100,50 Q60,60 50,100 Q40,60 0,50 Q40,40 50,0"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+          </div>
+
+          {/* Content Container */}
+          <div className="container mx-auto px-6 relative z-10">
+            {/* Section Title with Leaf Accent */}
+            <div className="text-center mb-16 relative">
+              <span className="text-sm text-lime-600 mb-2 block tracking-wider flex items-center justify-center gap-2">
+                <svg className="w-4 h-4 text-lime-500" viewBox="0 0 24 24">
+                  <path
+                    d="M12,2 Q16,8 22,12 Q16,16 12,22 Q8,16 2,12 Q8,8 12,2"
+                    fill="currentColor"
+                  />
+                </svg>
+                TECHNOLOGIES I WORK WITH
+                <svg
+                  className="w-4 h-4 text-lime-500 rotate-180"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12,2 Q16,8 22,12 Q16,16 12,22 Q8,16 2,12 Q8,8 12,2"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+              <h2 className="text-4xl font-bold text-gray-800 relative inline-block">
+                My Skills
+                <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-transparent via-lime-500/50 to-transparent"></div>
+              </h2>
+            </div>
+
+            {/* Skills Tags Container with Nature-Inspired Design */}
+            <div
+              className="max-w-4xl mx-auto bg-white/60 backdrop-blur-md p-12 rounded-3xl border border-gray-100 
+                            shadow-[0_8px_30px_rgb(0,0,0,0.04)] relative overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(132,204,22,0.1),transparent_70%)]"></div>
+              <div className="relative z-10 flex flex-wrap justify-center gap-4">
+                {[
+                  "Next.js",
+                  "JavaScript",
+                  "React",
+                  "Node.js",
+                  "Tailwind CSS",
+                  "PostgreSQL",
+                  "TRPC",
+                  "ShadcnUI",
+                  "MongoDB",
+                  "Prisma",
+                  "Docker",
+                  "CI/CD",
+                  "Astro",
+                  "Framer Motion",
+                ].map((skill) => (
+                  <div key={skill} className="group relative">
+                    <div className="absolute -inset-1 bg-gradient-to-r from-lime-100 to-emerald-100 rounded-full opacity-0 group-hover:opacity-50 blur-xl transition-opacity"></div>
+                    <div
+                      className="px-6 py-3 bg-white/90 backdrop-blur-sm rounded-full border border-gray-100 
+                                  shadow-sm hover:border-lime-500 hover:shadow-md relative
+                                  transition-all duration-300 cursor-pointer group-hover:bg-gradient-to-r 
+                                  group-hover:from-lime-50 group-hover:to-emerald-50"
+                    >
+                      <span className="text-gray-700 group-hover:text-lime-600 transition-colors">
+                        {skill}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </motion.main>
   );

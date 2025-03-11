@@ -44,8 +44,12 @@ export default function Experience() {
         <section className="px-6 pb-32">
           <div className="container mx-auto max-w-4xl">
             <div className="relative">
-              {/* Timeline Line */}
-              <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-gray-200"></div>
+              {/* Timeline Line - Add gradient effect */}
+              <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-gradient-to-b from-lime-300 via-lime-500 to-emerald-600"></div>
+
+              {/* Add decorative elements */}
+              <div className="absolute -top-10 -left-10 w-40 h-40 rounded-full bg-lime-500 opacity-5 blur-3xl"></div>
+              <div className="absolute bottom-20 right-0 w-60 h-60 rounded-full bg-emerald-500 opacity-5 blur-3xl"></div>
 
               {/* Experience Items */}
               {experienceData.map((item, index) => (
