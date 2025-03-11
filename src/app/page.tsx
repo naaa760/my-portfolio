@@ -8,6 +8,7 @@ import AnimatedLoader from "./components/AnimatedLoader";
 import "./components/neuButton.css";
 import "./components/scrollButtons.css";
 import { Dancing_Script } from "next/font/google";
+import SnowEffect from "./components/SnowEffect";
 
 const dancingScript = Dancing_Script({ subsets: ["latin"] });
 
@@ -967,21 +968,56 @@ export default function Home() {
             </div>
 
             <h2
-              className={`${dancingScript.className} text-[72px] mb-20 max-w-4xl relative text-gray-800 leading-tight`}
+              className={`${dancingScript.className} relative mb-20 max-w-4xl`}
             >
-              <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-gray-600">
+              <span className="text-6xl md:text-7xl bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-gray-600 relative z-10">
                 I am all over
                 <br />
-                <span className="text-[84px] text-[#84cc16] ml-8">
+                <span className="text-7xl md:text-8xl bg-gradient-to-r from-lime-500 via-emerald-500 to-lime-400 bg-clip-text text-transparent ml-8 relative">
                   the internet
+                  <div className="absolute -inset-2 bg-gradient-to-r from-lime-500/20 to-emerald-500/20 blur-2xl -z-10"></div>
                 </span>
               </span>
-              <span className="absolute inset-0 bg-gradient-to-r from-[#84cc16] to-transparent opacity-10 blur-xl"></span>
+
+              {/* Decorative Elements */}
+              <div className="absolute -top-8 -left-8 w-16 h-16 bg-gradient-to-br from-lime-400/20 to-emerald-400/20 rounded-full blur-xl"></div>
+              <div className="absolute top-1/2 -right-4 w-24 h-24 bg-gradient-to-br from-emerald-400/20 to-lime-400/20 rounded-full blur-xl"></div>
+
+              {/* Animated Dots */}
+              <div className="absolute top-0 right-0 flex gap-2">
+                {[...Array(3)].map((_, i) => (
+                  <span
+                    key={i}
+                    className="w-2 h-2 rounded-full bg-lime-500 opacity-75"
+                    style={{
+                      animation: `pulse 1.5s ease-in-out ${i * 0.2}s infinite`,
+                    }}
+                  ></span>
+                ))}
+              </div>
+
+              {/* Subtle Line Decoration */}
+              <div className="absolute -bottom-4 left-0 w-1/2 h-px bg-gradient-to-r from-transparent via-lime-500/50 to-transparent"></div>
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { name: "Twitter/X", url: "https://x.com/nehaaaa_6" },
+                {
+                  name: "Twitter/X",
+                  url: "https://x.com/nehaaaa_6",
+                  icon: (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="currentColor"
+                      className="transition-transform group-hover:scale-110"
+                      viewBox="0 0 16 16"
+                    >
+                      <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                    </svg>
+                  ),
+                },
                 {
                   name: "LinkedIn",
                   url: "https://www.linkedin.com/in/neha-prasad-92499821b/",
@@ -993,52 +1029,54 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   key={platform.name}
-                  className="group bg-white rounded-2xl p-8 shadow-sm border border-gray-100 relative overflow-hidden transition-all duration-300"
+                  className="group relative overflow-hidden rounded-2xl p-8 transition-all duration-500 hover:shadow-2xl"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#84cc16] to-transparent opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
-                  <div className="flex justify-between items-center relative">
-                    <h3 className="text-xl">{platform.name}</h3>
-                    <div className="bg-[#84cc16] rounded-full p-3 relative group-hover:shadow-[0_0_20px_rgba(132,204,22,0.3)] transition-all duration-300">
-                      <div className="absolute inset-0 bg-[#84cc16] rounded-full blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
-                      <svg
-                        className="w-5 h-5 relative z-10"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                      >
-                        <path
-                          d="M5 19L19 5M19 5H5M19 5V19"
-                          stroke="white"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
+                  <div className="absolute inset-0 bg-gradient-to-br from-lime-400/20 via-emerald-400/20 to-lime-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute -inset-px bg-gradient-to-br from-lime-500 via-emerald-500 to-lime-500 opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500 group-hover:duration-200"></div>
+
+                  <div className="relative flex justify-between items-center">
+                    <div className="space-y-2">
+                      <h3 className="text-xl font-semibold text-gray-800 group-hover:text-lime-600 transition-colors">
+                        {platform.name}
+                      </h3>
+                      <p className="text-sm text-gray-600 group-hover:text-lime-500 transition-colors">
+                        Connect with me
+                      </p>
+                    </div>
+
+                    <div className="bg-gradient-to-br from-lime-500 to-emerald-500 p-3 rounded-full text-white transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
+                      {platform.icon}
                     </div>
                   </div>
+
+                  <div className="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-transparent via-lime-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </Link>
               ))}
 
               <Link
                 href="mailto:nehaprasad27118@gmail.com"
-                className="bg-[#84cc16] rounded-2xl p-8 col-span-2 relative group cursor-pointer overflow-hidden"
+                className="bg-gradient-to-br from-lime-500 to-emerald-500 rounded-2xl p-8 col-span-2 relative group cursor-pointer overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-                <div className="absolute -inset-1 bg-gradient-to-r from-[#84cc16] to-[#84cc16]/50 opacity-75 group-hover:opacity-100 blur-2xl transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
                 <div className="relative flex justify-between items-center">
-                  <h3 className="text-xl text-white">Get in touch</h3>
-                  <div className="bg-white rounded-full p-3 relative group-hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all duration-300">
-                    <div className="absolute inset-0 bg-white rounded-full blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+                  <div className="space-y-2">
+                    <h3 className="text-2xl font-semibold text-white">
+                      Get in touch
+                    </h3>
+                    <p className="text-white/80">Lets work together</p>
+                  </div>
+                  <div className="bg-white/20 backdrop-blur-sm p-4 rounded-full transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
                     <svg
-                      className="w-5 h-5 text-[#84cc16] relative z-10"
-                      viewBox="0 0 24 24"
+                      className="w-6 h-6 text-white"
                       fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
                     >
                       <path
-                        d="M5 19L19 5M19 5H5M19 5V19"
-                        stroke="currentColor"
-                        strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"
                       />
                     </svg>
                   </div>
@@ -1091,6 +1129,9 @@ export default function Home() {
         </motion.section>
 
         <section className="w-full py-20 relative overflow-hidden">
+          {/* Add Snow Effect */}
+          <SnowEffect />
+
           <div className="absolute inset-0">
             <Image
               src="/fl.jpg"
@@ -1205,8 +1246,9 @@ export default function Home() {
                   "Prisma",
                   "Docker",
                   "CI/CD",
-                  "Astro",
-                  "Framer Motion",
+                  "AWS",
+                  "Python",
+                  "LLM",
                 ].map((skill) => (
                   <div key={skill} className="group relative">
                     <div className="absolute -inset-1 bg-gradient-to-r from-lime-100 to-emerald-100 rounded-full opacity-0 group-hover:opacity-50 blur-xl transition-opacity"></div>
