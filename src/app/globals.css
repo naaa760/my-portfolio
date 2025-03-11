@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  @font-face {
+    font-family: "Dancing Script";
+    font-style: normal;
+    font-display: swap;
+    src: url("/fonts/dancing-script.woff2") format("woff2");
+  }
+}
+
+.font-dancing-script {
+  font-family: "Dancing Script", cursive;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
