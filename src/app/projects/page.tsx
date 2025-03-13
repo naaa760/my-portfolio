@@ -171,22 +171,6 @@ export default function Projects() {
 const projects = [
   {
     id: 1,
-    title: "TimeBank",
-    description:
-      "TimeBank is a modern web application that enables users to exchange services and skills using time as currency. Users can offer their expertise, request services, and build a community based on mutual skill-sharing.",
-    image: "/pt6.png",
-    technologies: [
-      "Next.js",
-      "TypeScript",
-      "React",
-      "Node.js",
-      "Express.js",
-      "PostgreSQL (with Neon)",
-    ],
-    link: "https://timebank-knhl.vercel.app/",
-  },
-  {
-    id: 2,
     title: "TalkCast",
     description:
       "TalkCast is a modern podcast platform that connects creators and listeners through a beautiful, unified interface. It solves the problem of content discovery by offering personalized recommendations while giving creators tools to grow their audience. The platform combines stunning design with community features like Fans Like You transforming the podcast experience from fragmented and overwhelming to curated and engaging for everyone involved.",
@@ -201,8 +185,9 @@ const projects = [
     ],
     link: "https://mutli-app.vercel.app/",
   },
+
   {
-    id: 3,
+    id: 2,
     title: "Jirnov",
     description:
       "JINova is a streamlined project management platform that combines task management, team collaboration, and client communication in one intuitive interface. It simplifies complex workflows while providing powerful features for tracking progress, managing resources, and analyzing project performance. The platform's flexible design adapts to various team sizes and methodologies, making project management more efficient and less overwhelming.",
@@ -218,18 +203,9 @@ const projects = [
     ],
     link: "https://jirnov.vercel.app/",
   },
-  {
-    id: 4,
-    title: "Permissionless-Airdrop",
-    description:
-      "This project is a Solana dApp that lets users connect their Phantom wallet to view and claim token airdrops. It interfaces with Streamflow's airdrop program on Solana devnet, allowing users to search for airdrops by ID, see details like token amounts and recipient counts, and execute claim transactions that transfer tokens directly to their wallet.",
-    image: "/pt3.png",
-    technologies: ["React with TypeScript", "Solana web3.js", "Craco"],
-    link: "https://permissionless-airdrop.vercel.app/",
-  },
 
   {
-    id: 5,
+    id: 3,
     title: "VocaVista",
     description:
       "This project is a Next.js web app featuring secure user authentication via Clerk and personalized AI using Google's Gemini. It uses a serverless PostgreSQL database (Neon) for secure, contextual user data storage.",
@@ -246,7 +222,44 @@ const projects = [
   },
 
   {
+    id: 4,
+    title: "HealthPulse",
+    description:
+      "I used Created reusable React components and managed state using React Hooks for a dynamic admindashboard. Enhancing performance",
+    image: "/Health.png",
+    technologies: ["React", "TypeScript", "SQL", "Python", "Prisma"],
+    link: "https://health-pulse-beta.vercel.app/",
+  },
+
+  {
+    id: 5,
+    title: "TimeBank",
+    description:
+      "TimeBank is a modern web application that enables users to exchange services and skills using time as currency. Users can offer their expertise, request services, and build a community based on mutual skill-sharing.",
+    image: "/pt6.png",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "React",
+      "Node.js",
+      "Express.js",
+      "PostgreSQL (with Neon)",
+    ],
+    link: "https://timebank-knhl.vercel.app/",
+  },
+
+  {
     id: 6,
+    title: "Permissionless-Airdrop",
+    description:
+      "This project is a Solana dApp that lets users connect their Phantom wallet to view and claim token airdrops. It interfaces with Streamflow's airdrop program on Solana devnet, allowing users to search for airdrops by ID, see details like token amounts and recipient counts, and execute claim transactions that transfer tokens directly to their wallet.",
+    image: "/pt3.png",
+    technologies: ["React with TypeScript", "Solana web3.js", "Craco"],
+    link: "https://permissionless-airdrop.vercel.app/",
+  },
+
+  {
+    id: 7,
     title: "Dwellex",
     description:
       "This is a decentralized real estate marketplace built on blockchain technology. The platform allows users to buy, sell, and manage real estate properties using cryptocurrency (ETH). The project features a modern",
@@ -256,7 +269,7 @@ const projects = [
   },
 
   {
-    id: 7,
+    id: 8,
     title: "SnapCart",
     description:
       "POSGRESTORE is a modern e-commerce platform with a React/TypeScript frontend and a Node.js/Express backend, using Zustand for state management, Neon PostgreSQL for data storage, and secure CRUD operations via a RESTful API.",
@@ -273,7 +286,7 @@ const projects = [
   },
 
   {
-    id: 8,
+    id: 9,
     title: "SearchLio",
     description:
       "SearchEngine enables you to find clarity and significant results on a large scale by linking queries and results to the overarching objectives of your search.",
@@ -283,7 +296,7 @@ const projects = [
   },
 
   {
-    id: 9,
+    id: 10,
     title: "ThreadLink",
     description:
       "This Next.js user profile feature uses server components for optimized data fetching and SEO, enhancing performance. Its modular design supports user-specific actions like follow status and liked posts.",
@@ -297,15 +310,5 @@ const projects = [
       "postgres",
     ],
     link: "https://threadlink-6b9f.vercel.app/",
-  },
-
-  {
-    id: 10,
-    title: "HealthPulse",
-    description:
-      "I used Created reusable React components and managed state using React Hooks for a dynamic admindashboard. Enhancing performance",
-    image: "/Health.png",
-    technologies: ["React", "TypeScript", "SQL", "Python", "Prisma"],
-    link: "https://health-pulse-beta.vercel.app/",
   },
 ];
