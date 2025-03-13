@@ -522,10 +522,11 @@ export default function Home() {
             </div>
 
             <h2 className="text-2xl md:text-2xl font-light mb-16 max-w-3xl leading-relaxed text-gray-300">
-              Hi, I am Neha Prasad, a frontend developer in my final year of
-              college. I started my journey with HTML, CSS, and JavaScript,
-              learning from tutorials and diving deeper through connections on
-              platforms like Twitter and LinkedIn.
+              Hi, I am Neha Prasad, a Software developer. I am a graduate of
+              Computer Science and Engineering from UoPeople, California. I
+              started my journey with HTML, CSS, and JavaScript, learning from
+              tutorials and diving deeper through connections on platforms like
+              Twitter and LinkedIn.
               <br />
               <br />
               Over time, I have worked on projects implementing features like
