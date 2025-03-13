@@ -233,6 +233,26 @@ const projects = [
 
   {
     id: 5,
+    title: "RefactorRealm",
+    description:
+      "This project is a web-based code editor built with Monaco Editor (the same technology behind VS Code) that supports multiple programming languages like JavaScript, Python, and TypeScript. It features a robust theming system with carefully crafted dark themes (GitHub Dark, Monokai, and Solarized Dark), type-safe configurations, and integration with the Piston runtime for code execution, making it suitable for educational platforms or online coding environments.",
+    image: "/ref.png",
+    technologies: ["Next.js", "TypeScript", "Convex", "Clerk"],
+    link: "https://refactor-realm-egpp.vercel.app/",
+  },
+
+  {
+    id: 6,
+    title: "VoiceAgent",
+    description:
+      "This web application allows users to have voice conversations with an AI assistant. Users enter their contact details, start a voice call, see real-time feedback during the conversation (AI speaking status and volume levels), and receive a qualification result and conversation summary after the call ends. It's essentially a platform for automated AI voice interactions with visual feedback.",
+    image: "/voi.png",
+    technologies: ["Next.js", "JavaScript", "Python", "VAPI"],
+    link: "https://ai-voice-agent-ten.vercel.app/",
+  },
+
+  {
+    id: 6,
     title: "TimeBank",
     description:
       "TimeBank is a modern web application that enables users to exchange services and skills using time as currency. Users can offer their expertise, request services, and build a community based on mutual skill-sharing.",
@@ -249,7 +269,7 @@ const projects = [
   },
 
   {
-    id: 6,
+    id: 7,
     title: "Permissionless-Airdrop",
     description:
       "This project is a Solana dApp that lets users connect their Phantom wallet to view and claim token airdrops. It interfaces with Streamflow's airdrop program on Solana devnet, allowing users to search for airdrops by ID, see details like token amounts and recipient counts, and execute claim transactions that transfer tokens directly to their wallet.",
@@ -259,7 +279,7 @@ const projects = [
   },
 
   {
-    id: 7,
+    id: 8,
     title: "Dwellex",
     description:
       "This is a decentralized real estate marketplace built on blockchain technology. The platform allows users to buy, sell, and manage real estate properties using cryptocurrency (ETH). The project features a modern",
@@ -269,7 +289,7 @@ const projects = [
   },
 
   {
-    id: 8,
+    id: 9,
     title: "SnapCart",
     description:
       "POSGRESTORE is a modern e-commerce platform with a React/TypeScript frontend and a Node.js/Express backend, using Zustand for state management, Neon PostgreSQL for data storage, and secure CRUD operations via a RESTful API.",
@@ -286,7 +306,7 @@ const projects = [
   },
 
   {
-    id: 9,
+    id: 10,
     title: "SearchLio",
     description:
       "SearchEngine enables you to find clarity and significant results on a large scale by linking queries and results to the overarching objectives of your search.",
@@ -296,7 +316,7 @@ const projects = [
   },
 
   {
-    id: 10,
+    id: 11,
     title: "ThreadLink",
     description:
       "This Next.js user profile feature uses server components for optimized data fetching and SEO, enhancing performance. Its modular design supports user-specific actions like follow status and liked posts.",
