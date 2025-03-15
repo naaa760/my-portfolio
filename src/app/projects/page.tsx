@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -19,16 +18,10 @@ export default function Projects() {
         <div className="absolute inset-0 bg-gradient-to-b from-gray-900/90 via-gray-900/80 to-gray-900/90"></div>
       </div>
 
-      {/* Hero Section with Enhanced Title */}
+      {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 z-10">
         <div className="container mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-4xl mx-auto text-center"
-          >
-            {/* Section Label */}
+          <div className="max-w-4xl mx-auto text-center">
             <div className="mb-6 inline-block">
               <span className="text-xs text-lime-400 tracking-widest uppercase font-medium">
                 Portfolio
@@ -47,105 +40,109 @@ export default function Projects() {
               A collection of projects that showcase my expertise in web design
               and development.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Projects Grid with Enhanced Cards */}
+      {/* Projects Grid */}
       <section className="px-6 pb-32 relative z-10">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-            {projects.map((project, index) => (
-              <motion.div
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+            {projects.map((project) => (
+              <div
                 key={project.id}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="project-card-shadow group"
+                className="group bg-gray-800/40 backdrop-blur-lg rounded-3xl p-6 lg:p-8 border border-gray-700/30 
+                hover:border-lime-500/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(132,204,22,0.1)]"
               >
-                <div className="mb-6">
-                  <span className="text-xs text-lime-400 mb-2 block">{`Project ${String(
-                    index + 1
-                  ).padStart(2, "0")}`}</span>
-                  <h3 className="text-3xl font-medium text-white group-hover:text-lime-300 transition-colors duration-300">
-                    {project.title}
-                  </h3>
-                </div>
-                <p className="text-gray-400 text-sm mb-8">
-                  {project.description}
-                </p>
-
-                {/* Project Image with Enhanced Link */}
+                {/* Project Image Container */}
                 <Link
                   href={project.link || "#"}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block transition-all duration-500 hover:-translate-y-2"
+                  className="block mb-6"
                 >
-                  <div className="relative aspect-[16/10] w-full rounded-[40px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
+                  <div className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden">
                     <Image
                       src={project.image}
                       alt={project.title}
                       fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="object-cover transform transition-transform duration-500 group-hover:scale-105"
                       priority
                     />
-                    {/* Hover Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <span className="text-white text-sm font-medium px-6 py-3 rounded-full bg-lime-500/90 backdrop-blur-sm flex items-center gap-2">
-                        View Project
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-4 w-4"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
+                    {/* Gradient Overlay */}
+                    <div
+                      className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/30 to-transparent opacity-0 
+                      group-hover:opacity-100 transition-opacity duration-300"
+                    >
+                      <div
+                        className="absolute bottom-4 right-4 transform translate-y-4 opacity-0 
+                        group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300"
+                      >
+                        <span
+                          className="bg-lime-500 text-white text-sm px-4 py-2 rounded-full 
+                          flex items-center gap-2 hover:bg-lime-400 transition-colors"
                         >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M14 5l7 7m0 0l-7 7m7-7H3"
-                          />
-                        </svg>
-                      </span>
+                          View Live Project
+                          <svg
+                            className="w-4 h-4"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M14 5l7 7m0 0l-7 7m7-7H3"
+                            />
+                          </svg>
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </Link>
 
-                {/* Technologies Used with Enhanced Style */}
-                <div className="mt-8 flex flex-wrap gap-3">
-                  {project.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-1 bg-gray-800/80 text-gray-300 rounded-full text-xs border border-gray-700 backdrop-blur-sm hover:bg-lime-900/50 hover:text-lime-300 hover:border-lime-700 transition-all duration-300"
-                    >
-                      {tech}
+                {/* Project Info */}
+                <div className="space-y-4">
+                  <div>
+                    <span className="text-lime-400 text-sm font-medium mb-2 block">
+                      Featured Project
                     </span>
-                  ))}
+                    <h3 className="text-2xl font-medium text-white group-hover:text-lime-400 transition-colors">
+                      {project.title}
+                    </h3>
+                  </div>
+
+                  <p className="text-gray-400 text-sm leading-relaxed">
+                    {project.description}
+                  </p>
+
+                  {/* Technologies */}
+                  <div className="pt-4 border-t border-gray-700/50">
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-3 py-1.5 bg-gray-700/50 text-gray-300 rounded-full text-xs border border-gray-600/50
+                          hover:border-lime-500/50 hover:bg-gray-700/80 transition-colors duration-300"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Decorative Elements */}
-      <div className="absolute top-40 left-10 w-64 h-64 rounded-full bg-lime-500/10 blur-3xl z-0"></div>
-      <div className="absolute bottom-40 right-10 w-80 h-80 rounded-full bg-lime-500/10 blur-3xl z-0"></div>
-      <div className="absolute top-[40%] right-[30%] w-40 h-40 rounded-full bg-emerald-500/10 blur-3xl z-0"></div>
-
-      {/* Enhanced Back to Home Button */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.5 }}
-        className="fixed bottom-8 right-8 z-50"
-      >
+      {/* Back to Home Button */}
+      <div className="fixed bottom-8 right-8 z-50">
         <Link
           href="/"
-          className="bg-lime-400 hover:bg-lime-500 text-gray-900 px-6 py-3 rounded-full flex items-center gap-2 transition-all duration-300 shadow-[0_0_15px_rgba(132,204,22,0.3)]"
+          className="bg-lime-400 text-gray-900 px-6 py-3 rounded-full flex items-center gap-2"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -163,10 +160,11 @@ export default function Projects() {
           </svg>
           Back to Home
         </Link>
-      </motion.div>
+      </div>
     </main>
   );
 }
+
 // Project Data
 const projects = [
   {
