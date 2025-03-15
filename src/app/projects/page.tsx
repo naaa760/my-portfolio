@@ -5,17 +5,18 @@ import Link from "next/link";
 
 export default function Projects() {
   return (
-    <main className="min-h-screen bg-gray-900 relative">
+    <main className="min-h-screen relative">
       {/* Background Image with Overlay */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
+      <div className="fixed inset-0">
         <Image
-          src="/pr.jpg"
+          src="/ti.jpg"
           alt="Projects Background"
           fill
-          className="object-cover opacity-20"
+          className="object-cover"
           priority
+          quality={100}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-900/90 via-gray-900/80 to-gray-900/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/40"></div>
       </div>
 
       {/* Hero Section */}
@@ -36,7 +37,7 @@ export default function Projects() {
                 <div className="absolute -bottom-2 left-0 h-[2px] w-full bg-lime-400/50"></div>
               </span>
             </h1>
-            <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
+            <p className="text-black text-lg md:text-xl max-w-2xl mx-auto">
               A collection of projects that showcase my expertise in web design
               and development.
             </p>
@@ -44,7 +45,7 @@ export default function Projects() {
         </div>
       </section>
 
-      {/* Projects Grid */}
+      {/* Projects Grihttp://localhost:3000d */}
       <section className="px-6 pb-32 relative z-10">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
