@@ -32,6 +32,12 @@ const videos: Video[] = [
     thumbnail: "/video1.jpg",
     link: "https://www.loom.com/embed/c7453e34ae9d47c3840aa187f926a6ed?sid=51a68db9-ca89-4b24-959d-75de1f2b1866",
   },
+  {
+    title: "Project Demo",
+    description: "Demonstration of my latest web application",
+    thumbnail: "/video2.jpg",
+    link: "https://www.loom.com/share/08a0e41d6cb44023a8813bbb7ac70532?sid=475fe5e0-d6c6-4d78-9fe9-5e7224832cdb",
+  },
 ];
 
 const skillCategories: SkillCategory[] = [
@@ -1140,6 +1146,79 @@ export default function Home() {
                       </div>
                     </div>
                   ))}
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section className="w-full py-20 relative overflow-hidden">
+            <div className="container mx-auto px-4 md:px-6">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                  Watch My Demos
+                </h2>
+                <p className="text-gray-600 max-w-2xl mx-auto">
+                  Check out these video demonstrations of my projects
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                {/* First Video */}
+                <div className="rounded-2xl overflow-hidden shadow-xl">
+                  <div
+                    style={{
+                      position: "relative",
+                      paddingBottom: "56.22254758418741%",
+                      height: 0,
+                    }}
+                  >
+                    <iframe
+                      src="https://www.loom.com/embed/08a0e41d6cb44023a8813bbb7ac70532?sid=a519bab0-786b-4f41-9235-097824193cf1"
+                      frameBorder="0"
+                      allowFullScreen
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                      }}
+                    ></iframe>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm p-4">
+                    <h3 className="text-lg font-medium text-gray-800">
+                      Project Demo
+                    </h3>
+                  </div>
+                </div>
+
+                {/* Second Video */}
+                <div className="rounded-2xl overflow-hidden shadow-xl">
+                  <div
+                    style={{
+                      position: "relative",
+                      paddingBottom: "56.22254758418741%",
+                      height: 0,
+                    }}
+                  >
+                    <iframe
+                      src="https://www.loom.com/embed/c7453e34ae9d47c3840aa187f926a6ed?sid=51a68db9-ca89-4b24-959d-75de1f2b1866"
+                      frameBorder="0"
+                      allowFullScreen
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                      }}
+                    ></iframe>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm p-4">
+                    <h3 className="text-lg font-medium text-gray-800">
+                      Portfolio Showcase
+                    </h3>
+                  </div>
                 </div>
               </div>
             </div>
