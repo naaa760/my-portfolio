@@ -282,7 +282,7 @@ const projects = [
     title: "Dwellex",
     description:
       "This is a decentralized real estate marketplace built on blockchain technology. The platform allows users to buy, sell, and manage real estate properties using cryptocurrency (ETH). The project features a modern",
-    image: "/chat.png",
+    image: "/crypt.png",
     technologies: ["React", "Solidity", "etherum"],
     link: "https://dwellex.vercel.app/",
   },
