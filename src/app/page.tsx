@@ -1111,6 +1111,25 @@ export default function Home() {
                   ))}
                 </div>
               </div>
+
+              <div className="mt-16 relative z-10 flex justify-center">
+                <div className="relative max-w-xs">
+                  <div className="absolute -inset-4 bg-gradient-to-r from-lime-200/20 to-emerald-200/20 rounded-full blur-xl"></div>
+
+                  <div className="relative rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
+                    <Image
+                      src="/key.png"
+                      alt="Skills Key"
+                      width={300}
+                      height={300}
+                      className="object-contain bg-white/5 backdrop-blur-sm p-4"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+                  </div>
+
+                  <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-lime-400/20 rounded-full blur-xl"></div>
+                </div>
+              </div>
             </div>
           </section>
 
