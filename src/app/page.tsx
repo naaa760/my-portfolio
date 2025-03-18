@@ -453,28 +453,21 @@ export default function Home() {
             <div className="container mx-auto px-6 relative z-10">
               <div className="flex items-center mb-6">
                 <div className="w-2 h-2 rounded-full bg-lime-400 mr-2"></div>
-                <span className="text-sm text-lime-400">About Me</span>
+                <span className="text-base md:text-lg text-lime-400 font-medium">
+                  About Me
+                </span>
               </div>
 
               <h2 className="text-2xl md:text-2xl font-light mb-16 max-w-3xl leading-relaxed text-gray-300">
-                Hi, I am Neha Prasad, a Software developer. I am a graduate of
-                Computer Science and Engineering from UoPeople, California. I
-                started my journey with HTML, CSS, and JavaScript, learning from
-                tutorials and diving deeper through connections on platforms
-                like Twitter and LinkedIn.
-                <br />
-                <br />
-                Over time, I have worked on projects implementing features like
-                JWT authentication, Clerk integrations, and CRUD operations,
-                which taught me how to handle large-scale applications and
-                collaborate effectively.
-                <br />
-                <br />I have interned at two companies, gaining experience in
-                teamwork and solving real-world problems. Hackathons and
-                open-source contributions are a big part of my growth—I love
-                exploring codebases, fixing bugs, and adding features. I am
-                adaptable, quick to learn, and thrive in dynamic,
-                problem-solving environments.
+                I am a developer with over two years of experience building
+                websites and APIs using React, Next.js, and TypeScript. I take
+                Figma designs and turn them into working, responsive components.
+                I also manage AWS front-end deployments to keep websites running
+                efficiently. I focus on creating fast, bug-free, and optimized
+                solutions, and I use AI tools to speed up development.
+                Additionally, I have experience building LLM apps or Web3.
+                I&apos;m always eager to learn new technologies and improve my
+                skills to deliver the best results for every project.
               </h2>
 
               <div className="relative inline-block group">
@@ -583,16 +576,28 @@ export default function Home() {
                   <p className="text-gray-400 text-sm mb-8">
                     Web design & Web development
                   </p>
-                  <div className="relative aspect-[16/10] w-full rounded-[40px] overflow-hidden">
-                    <Image
-                      src="/pt6.png"
-                      alt="SilverLynx Technologies Project"
-                      fill
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      className="object-cover"
-                      priority
-                    />
-                  </div>
+                  <a
+                    href="https://mutli-app.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <div className="relative aspect-[16/10] w-full rounded-[40px] overflow-hidden group">
+                      <Image
+                        src="/pt1.png"
+                        alt="TalkCast Project"
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        priority
+                      />
+                      <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <span className="bg-lime-500 text-white px-4 py-2 rounded-full">
+                          View Live Project
+                        </span>
+                      </div>
+                    </div>
+                  </a>
                 </div>
 
                 <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8">
@@ -604,16 +609,28 @@ export default function Home() {
                   <p className="text-gray-400 text-sm mb-8">
                     Web design & Web development
                   </p>
-                  <div className="relative aspect-[16/10] w-full rounded-[40px] overflow-hidden">
-                    <Image
-                      src="/pt1.png"
-                      alt="Evergreen Solutions Project"
-                      fill
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      className="object-cover"
-                      priority
-                    />
-                  </div>
+                  <a
+                    href="https://timebank-knhl.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <div className="relative aspect-[16/10] w-full rounded-[40px] overflow-hidden group">
+                      <Image
+                        src="/pt6.png"
+                        alt="TimeBank Project"
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        priority
+                      />
+                      <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <span className="bg-lime-500 text-white px-4 py-2 rounded-full">
+                          View Live Project
+                        </span>
+                      </div>
+                    </div>
+                  </a>
                 </div>
               </div>
 
@@ -1071,6 +1088,19 @@ export default function Home() {
                   My Skills
                   <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-transparent via-lime-500/50 to-transparent"></div>
                 </h2>
+
+                <br />
+                <br />
+
+                <h1 className="text-xl font-serif text-gray-800 tracking-wide leading-relaxed">
+                  With 1 years of experience, I specialize in front-end and
+                  full-stack development using React, Next.js, TypeScript,
+                  Node.js, and Prisma. Proficient in AWS, Docker, SQL, and
+                  Vercel, I build high-performance applications with seamless
+                  user interfaces, robust APIs, and cross-platform solutions.
+                  Skilled in GitHub workflows and deployment pipelines for
+                  efficient, scalable results.
+                </h1>
               </div>
 
               <div
