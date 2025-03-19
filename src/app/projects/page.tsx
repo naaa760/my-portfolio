@@ -118,7 +118,7 @@ export default function Projects() {
                     {project.description}
                   </p>
 
-                  {/* GitHub Link for TalkCast (Project ID 1) */}
+                 
                   {project.id === 1 && (
                     <div className="pt-2">
                       <a
@@ -139,7 +139,7 @@ export default function Projects() {
                     </div>
                   )}
 
-                  {/* GitHub Link for Jirnov (Project ID 2) */}
+                
                   {project.id === 2 && (
                     <div className="pt-2">
                       <a
@@ -160,7 +160,7 @@ export default function Projects() {
                     </div>
                   )}
 
-                  {/* GitHub Link for Jirnov (Project ID 2) */}
+                
                   {project.id === 3 && (
                     <div className="pt-2">
                       <a
@@ -181,7 +181,7 @@ export default function Projects() {
                     </div>
                   )}
 
-                  {/* GitHub Link for Jirnov (Project ID 2) */}
+                
                   {project.id === 4 && (
                     <div className="pt-2">
                       <a
@@ -202,7 +202,7 @@ export default function Projects() {
                     </div>
                   )}
 
-                  {/* GitHub Link for Jirnov (Project ID 2) */}
+                 
                   {project.id === 5 && (
                     <div className="pt-2">
                       <a
@@ -223,7 +223,7 @@ export default function Projects() {
                     </div>
                   )}
 
-                  {/* GitHub Link for Jirnov (Project ID 2) */}
+                  
                   {project.id === 6 && (
                     <div className="pt-2">
                       <a
@@ -244,7 +244,7 @@ export default function Projects() {
                     </div>
                   )}
 
-                  {/* GitHub Link for Jirnov (Project ID 2) */}
+                 
                   {project.id === 7 && (
                     <div className="pt-2">
                       <a
@@ -265,7 +265,7 @@ export default function Projects() {
                     </div>
                   )}
 
-                  {/* GitHub Link for Jirnov (Project ID 2) */}
+                  
                   {project.id === 8 && (
                     <div className="pt-2">
                       <a
@@ -286,7 +286,7 @@ export default function Projects() {
                     </div>
                   )}
 
-                  {/* GitHub Link for Jirnov (Project ID 2) */}
+                 
                   {project.id === 9 && (
                     <div className="pt-2">
                       <a
@@ -307,7 +307,7 @@ export default function Projects() {
                     </div>
                   )}
 
-                  {/* GitHub Link for Jirnov (Project ID 2) */}
+                 
                   {project.id === 10 && (
                     <div className="pt-2">
                       <a
@@ -328,7 +328,6 @@ export default function Projects() {
                     </div>
                   )}
 
-                  {/* GitHub Link for Jirnov (Project ID 2) */}
                   {project.id === 11 && (
                     <div className="pt-2">
                       <a
@@ -349,8 +348,8 @@ export default function Projects() {
                     </div>
                   )}
 
-                  {/* GitHub Link for Jirnov (Project ID 2) */}
-                  {project.id === 11 && (
+                 
+                  {project.id === 12 && (
                     <div className="pt-2">
                       <a
                         href="https://github.com/naaa760/searchlio"
@@ -370,8 +369,7 @@ export default function Projects() {
                     </div>
                   )}
 
-                  {/* GitHub Link for Jirnov (Project ID 2) */}
-                  {project.id === 12 && (
+                  {project.id === 13 && (
                     <div className="pt-2">
                       <a
                         href="https://github.com/naaa760/threadlink"
@@ -391,7 +389,7 @@ export default function Projects() {
                     </div>
                   )}
 
-                  {/* Technologies */}
+                  
                   <div className="pt-4 border-t border-gray-700/50">
                     <div className="flex flex-wrap gap-2">
                       {project.technologies.map((tech) => (
@@ -412,7 +410,7 @@ export default function Projects() {
         </div>
       </section>
 
-      {/* Back to Home Button */}
+    
       <div className="fixed bottom-8 right-8 z-50">
         <Link
           href="/"
@@ -490,7 +488,7 @@ const projects = [
       "Prisma",
       "Inngest",
     ],
-    link: "https://vocavista.vercel.app/",
+    link: "https://vocavista-nu.vercel.app/",
   },
 
   {
