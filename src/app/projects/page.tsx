@@ -55,6 +55,24 @@ export default function Projects() {
                 className="group bg-gray-800/40 backdrop-blur-lg rounded-3xl p-6 lg:p-8 border border-gray-700/30 
                 hover:border-lime-500/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(132,204,22,0.1)]"
               >
+                {/* Project Category Labels */}
+                <div className="mb-4 flex gap-2">
+                  {project.categories.map((category, index) => (
+                    <span
+                      key={index}
+                      className={`text-xs font-medium px-3 py-1 rounded-full border ${
+                        category === "Web3"
+                          ? "bg-purple-500/10 text-purple-400 border-purple-500/20"
+                          : category === "LLM"
+                          ? "bg-blue-500/10 text-blue-400 border-blue-500/20"
+                          : "bg-lime-500/10 text-lime-400 border-lime-500/20"
+                      }`}
+                    >
+                      {category}
+                    </span>
+                  ))}
+                </div>
+
                 {/* Project Image Container */}
                 <Link
                   href={project.link || "#"}
@@ -118,7 +136,6 @@ export default function Projects() {
                     {project.description}
                   </p>
 
-                 
                   {project.id === 1 && (
                     <div className="pt-2">
                       <a
@@ -139,7 +156,6 @@ export default function Projects() {
                     </div>
                   )}
 
-                
                   {project.id === 2 && (
                     <div className="pt-2">
                       <a
@@ -160,7 +176,6 @@ export default function Projects() {
                     </div>
                   )}
 
-                
                   {project.id === 3 && (
                     <div className="pt-2">
                       <a
@@ -181,7 +196,6 @@ export default function Projects() {
                     </div>
                   )}
 
-                
                   {project.id === 4 && (
                     <div className="pt-2">
                       <a
@@ -202,7 +216,6 @@ export default function Projects() {
                     </div>
                   )}
 
-                 
                   {project.id === 5 && (
                     <div className="pt-2">
                       <a
@@ -223,7 +236,6 @@ export default function Projects() {
                     </div>
                   )}
 
-                  
                   {project.id === 6 && (
                     <div className="pt-2">
                       <a
@@ -244,7 +256,6 @@ export default function Projects() {
                     </div>
                   )}
 
-                 
                   {project.id === 7 && (
                     <div className="pt-2">
                       <a
@@ -265,7 +276,6 @@ export default function Projects() {
                     </div>
                   )}
 
-                  
                   {project.id === 8 && (
                     <div className="pt-2">
                       <a
@@ -286,7 +296,6 @@ export default function Projects() {
                     </div>
                   )}
 
-                 
                   {project.id === 9 && (
                     <div className="pt-2">
                       <a
@@ -307,7 +316,6 @@ export default function Projects() {
                     </div>
                   )}
 
-                 
                   {project.id === 10 && (
                     <div className="pt-2">
                       <a
@@ -348,7 +356,6 @@ export default function Projects() {
                     </div>
                   )}
 
-                 
                   {project.id === 12 && (
                     <div className="pt-2">
                       <a
@@ -389,7 +396,6 @@ export default function Projects() {
                     </div>
                   )}
 
-                  
                   <div className="pt-4 border-t border-gray-700/50">
                     <div className="flex flex-wrap gap-2">
                       {project.technologies.map((tech) => (
@@ -410,7 +416,6 @@ export default function Projects() {
         </div>
       </section>
 
-    
       <div className="fixed bottom-8 right-8 z-50">
         <Link
           href="/"
@@ -442,6 +447,7 @@ const projects = [
   {
     id: 1,
     title: "TalkCast",
+    categories: ["Web2"],
     description:
       "TalkCast is a modern podcast platform that connects creators and listeners through a beautiful, unified interface. It solves the problem of content discovery by offering personalized recommendations while giving creators tools to grow their audience. The platform combines stunning design with community features like Fans Like You transforming the podcast experience from fragmented and overwhelming to curated and engaging for everyone involved.",
     image: "/pt1.png",
@@ -459,6 +465,7 @@ const projects = [
   {
     id: 2,
     title: "Jirnov",
+    categories: ["Web2"],
     description:
       "JINova is a streamlined project management platform that combines task management, team collaboration, and client communication in one intuitive interface. It simplifies complex workflows while providing powerful features for tracking progress, managing resources, and analyzing project performance. The platform's flexible design adapts to various team sizes and methodologies, making project management more efficient and less overwhelming.",
     image: "/pt2.png",
@@ -477,6 +484,7 @@ const projects = [
   {
     id: 3,
     title: "VocaVista",
+    categories: ["Web2", "AI"],
     description:
       "This project is a Next.js web app featuring secure user authentication via Clerk and personalized AI using Google's Gemini. It uses a serverless PostgreSQL database (Neon) for secure, contextual user data storage.",
     image: "/pt5.png",
@@ -494,6 +502,7 @@ const projects = [
   {
     id: 4,
     title: "HealthPulse",
+    categories: ["Web2"],
     description:
       "I used Created reusable React components and managed state using React Hooks for a dynamic admindashboard. Enhancing performance",
     image: "/Health.png",
@@ -504,6 +513,7 @@ const projects = [
   {
     id: 5,
     title: "Vexora",
+    categories: ["LLM"],
     description:
       "Vexora is an elegant Streamlit-based application that enables users to ask questions about PDF documents and receive accurate answers powered by Groq's Gemma2-9b-it model. The application uses advanced document processing techniques including text chunking, vector embeddings, and retrieval-augmented generation (RAG) to provide precise responses based on document content.",
     image: "/vex.png",
@@ -514,6 +524,7 @@ const projects = [
   {
     id: 6,
     title: "RefactorRealm",
+    categories: ["Web2"],
     description:
       "This project is a web-based code editor built with Monaco Editor (the same technology behind VS Code) that supports multiple programming languages like JavaScript, Python, and TypeScript. It features a robust theming system with carefully crafted dark themes (GitHub Dark, Monokai, and Solarized Dark), type-safe configurations, and integration with the Piston runtime for code execution, making it suitable for educational platforms or online coding environments.",
     image: "/ref.png",
@@ -524,6 +535,7 @@ const projects = [
   {
     id: 7,
     title: "VoiceAgent",
+    categories: ["AI", "LLM"],
     description:
       "This web application allows users to have voice conversations with an AI assistant. Users enter their contact details, start a voice call, see real-time feedback during the conversation (AI speaking status and volume levels), and receive a qualification result and conversation summary after the call ends. It's essentially a platform for automated AI voice interactions with visual feedback.",
     image: "/voi.png",
@@ -534,6 +546,7 @@ const projects = [
   {
     id: 8,
     title: "TimeBank",
+    categories: ["Web2"],
     description:
       "TimeBank is a modern web application that enables users to exchange services and skills using time as currency. Users can offer their expertise, request services, and build a community based on mutual skill-sharing.",
     image: "/pt6.png",
@@ -551,6 +564,7 @@ const projects = [
   {
     id: 9,
     title: "Permissionless-Airdrop",
+    categories: ["Web3"],
     description:
       "This project is a Solana dApp that lets users connect their Phantom wallet to view and claim token airdrops. It interfaces with Streamflow's airdrop program on Solana devnet, allowing users to search for airdrops by ID, see details like token amounts and recipient counts, and execute claim transactions that transfer tokens directly to their wallet.",
     image: "/pt3.png",
@@ -561,6 +575,7 @@ const projects = [
   {
     id: 10,
     title: "Dwellex",
+    categories: ["Web3"],
     description:
       "This is a decentralized real estate marketplace built on blockchain technology. The platform allows users to buy, sell, and manage real estate properties using cryptocurrency (ETH). The project features a modern",
     image: "/crypt.png",
@@ -571,6 +586,7 @@ const projects = [
   {
     id: 11,
     title: "SnapCart",
+    categories: ["Web2"],
     description:
       "POSGRESTORE is a modern e-commerce platform with a React/TypeScript frontend and a Node.js/Express backend, using Zustand for state management, Neon PostgreSQL for data storage, and secure CRUD operations via a RESTful API.",
     image: "/snap.png",
@@ -588,6 +604,7 @@ const projects = [
   {
     id: 12,
     title: "SearchLio",
+    categories: ["Web2"],
     description:
       "SearchEngine enables you to find clarity and significant results on a large scale by linking queries and results to the overarching objectives of your search.",
     image: "/Search.png",
@@ -598,6 +615,7 @@ const projects = [
   {
     id: 13,
     title: "ThreadLink",
+    categories: ["Web2"],
     description:
       "This Next.js user profile feature uses server components for optimized data fetching and SEO, enhancing performance. Its modular design supports user-specific actions like follow status and liked posts.",
     image: "/thread.png",
