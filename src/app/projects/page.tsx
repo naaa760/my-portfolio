@@ -139,7 +139,7 @@ export default function Projects() {
                   {project.id === 1 && (
                     <div className="pt-2">
                       <a
-                        href="https://github.com/naaa760/mutli-app"
+                        href="https://github.com/naaa760/interview-platform-with-a-real-time-ai-voice-agent"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center text-gray-400 hover:text-lime-400 transition-colors"
@@ -159,7 +159,7 @@ export default function Projects() {
                   {project.id === 2 && (
                     <div className="pt-2">
                       <a
-                        href="https://github.com/naaa760/jirnov"
+                        href="https://github.com/naaa760/mutli-app"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center text-gray-400 hover:text-lime-400 transition-colors"
@@ -179,7 +179,7 @@ export default function Projects() {
                   {project.id === 3 && (
                     <div className="pt-2">
                       <a
-                        href="https://github.com/naaa760/vocavista"
+                        href="https://github.com/naaa760/jirnov"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center text-gray-400 hover:text-lime-400 transition-colors"
@@ -199,7 +199,7 @@ export default function Projects() {
                   {project.id === 4 && (
                     <div className="pt-2">
                       <a
-                        href="https://github.com/naaa760/MindsDB-Hackathon"
+                        href="https://github.com/naaa760/vocavista"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center text-gray-400 hover:text-lime-400 transition-colors"
@@ -219,7 +219,7 @@ export default function Projects() {
                   {project.id === 5 && (
                     <div className="pt-2">
                       <a
-                        href="https://github.com/naaa760/vexora"
+                        href="https://github.com/naaa760/MindsDB-Hackathon"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center text-gray-400 hover:text-lime-400 transition-colors"
@@ -239,7 +239,7 @@ export default function Projects() {
                   {project.id === 6 && (
                     <div className="pt-2">
                       <a
-                        href="https://github.com/naaa760/refactor-realm"
+                        href="https://github.com/naaa760/vexora"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center text-gray-400 hover:text-lime-400 transition-colors"
@@ -259,7 +259,7 @@ export default function Projects() {
                   {project.id === 7 && (
                     <div className="pt-2">
                       <a
-                        href="https://github.com/naaa760/ai-voice-agent"
+                        href="https://github.com/naaa760/refactor-realm"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center text-gray-400 hover:text-lime-400 transition-colors"
@@ -279,7 +279,7 @@ export default function Projects() {
                   {project.id === 8 && (
                     <div className="pt-2">
                       <a
-                        href="https://github.com/naaa760/timebank"
+                        href="https://github.com/naaa760/ai-voice-agent"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center text-gray-400 hover:text-lime-400 transition-colors"
@@ -299,7 +299,7 @@ export default function Projects() {
                   {project.id === 9 && (
                     <div className="pt-2">
                       <a
-                        href="https://github.com/naaa760/permissionless-airdrop"
+                        href="https://github.com/naaa760/timebank"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center text-gray-400 hover:text-lime-400 transition-colors"
@@ -319,7 +319,7 @@ export default function Projects() {
                   {project.id === 10 && (
                     <div className="pt-2">
                       <a
-                        href="https://github.com/naaa760/dwellex-"
+                        href="https://github.com/naaa760/permissionless-airdrop"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center text-gray-400 hover:text-lime-400 transition-colors"
@@ -339,7 +339,7 @@ export default function Projects() {
                   {project.id === 11 && (
                     <div className="pt-2">
                       <a
-                        href="https://github.com/naaa760/snapcart"
+                        href="https://github.com/naaa760/dwellex-"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center text-gray-400 hover:text-lime-400 transition-colors"
@@ -359,7 +359,7 @@ export default function Projects() {
                   {project.id === 12 && (
                     <div className="pt-2">
                       <a
-                        href="https://github.com/naaa760/searchlio"
+                        href="https://github.com/naaa760/snapcart"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center text-gray-400 hover:text-lime-400 transition-colors"
@@ -379,7 +379,47 @@ export default function Projects() {
                   {project.id === 13 && (
                     <div className="pt-2">
                       <a
+                        href="https://github.com/naaa760/searchlio"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-gray-400 hover:text-lime-400 transition-colors"
+                      >
+                        <svg
+                          className="w-5 h-5 mr-2"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                        View GitHub Repository
+                      </a>
+                    </div>
+                  )}
+
+                  {project.id === 14 && (
+                    <div className="pt-2">
+                      <a
                         href="https://github.com/naaa760/threadlink"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-gray-400 hover:text-lime-400 transition-colors"
+                      >
+                        <svg
+                          className="w-5 h-5 mr-2"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                        View GitHub Repository
+                      </a>
+                    </div>
+                  )}
+
+                  {project.id === 15 && (
+                    <div className="pt-2">
+                      <a
+                        href="https://docs.google.com/spreadsheets/d/19GUVPp9hYrbpqAQImCGSpUVgWR9o8GvIh4Ctng5MYcs/edit?gid=1923098947#gid=1923098947"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center text-gray-400 hover:text-lime-400 transition-colors"
@@ -446,6 +486,25 @@ export default function Projects() {
 const projects = [
   {
     id: 1,
+    title: "EchoHire",
+    categories: ["Web2"],
+    description:
+      "This AI mock interview system is designed to boost your interview skills by providing real-time, lifelike sessions with personalized questions and detailed feedback. It features secure, hacker-proof authentication, a variety of interview types, and a customizable interview creation tool. Built with modern technologies like Next.js, Firebase, and innovative AI tools, it offers a comprehensive platform to both enhance your coding skills and excel in interviews.",
+    image: "/int.png",
+    technologies: [
+      "Next.js",
+      "React",
+      "VAPI",
+      "Tailwind CSS",
+      "Firebase",
+      "Zod",
+      "Gemini",
+    ],
+    link: "https://interview-platform-with-a-real-time-ai-voice-agent.vercel.app/",
+  },
+
+  {
+    id: 2,
     title: "TalkCast",
     categories: ["Web2"],
     description:
@@ -463,7 +522,7 @@ const projects = [
   },
 
   {
-    id: 2,
+    id: 3,
     title: "Jirnov",
     categories: ["Web2"],
     description:
@@ -482,7 +541,7 @@ const projects = [
   },
 
   {
-    id: 3,
+    id: 4,
     title: "VocaVista",
     categories: ["Web2", "AI"],
     description:
@@ -500,7 +559,7 @@ const projects = [
   },
 
   {
-    id: 4,
+    id: 5,
     title: "HealthPulse",
     categories: ["Web2"],
     description:
@@ -511,7 +570,7 @@ const projects = [
   },
 
   {
-    id: 5,
+    id: 6,
     title: "Vexora",
     categories: ["LLM"],
     description:
@@ -522,7 +581,7 @@ const projects = [
   },
 
   {
-    id: 6,
+    id: 7,
     title: "RefactorRealm",
     categories: ["Web2"],
     description:
@@ -533,7 +592,7 @@ const projects = [
   },
 
   {
-    id: 7,
+    id: 8,
     title: "VoiceAgent",
     categories: ["AI", "LLM"],
     description:
@@ -544,7 +603,7 @@ const projects = [
   },
 
   {
-    id: 8,
+    id: 9,
     title: "TimeBank",
     categories: ["Web2"],
     description:
@@ -562,7 +621,7 @@ const projects = [
   },
 
   {
-    id: 9,
+    id: 10,
     title: "Permissionless-Airdrop",
     categories: ["Web3"],
     description:
@@ -573,7 +632,7 @@ const projects = [
   },
 
   {
-    id: 10,
+    id: 11,
     title: "Dwellex",
     categories: ["Web3"],
     description:
@@ -584,7 +643,7 @@ const projects = [
   },
 
   {
-    id: 11,
+    id: 12,
     title: "SnapCart",
     categories: ["Web2"],
     description:
@@ -602,7 +661,7 @@ const projects = [
   },
 
   {
-    id: 12,
+    id: 13,
     title: "SearchLio",
     categories: ["Web2"],
     description:
@@ -613,7 +672,7 @@ const projects = [
   },
 
   {
-    id: 13,
+    id: 14,
     title: "ThreadLink",
     categories: ["Web2"],
     description:
@@ -628,5 +687,16 @@ const projects = [
       "postgres",
     ],
     link: "https://threadlink-6b9f.vercel.app/",
+  },
+
+  {
+    id: 15,
+    title: "AI-agent",
+    categories: ["AI-agent"],
+    description:
+      "A smart DSA AI chatbot that manages inventory effortlessly. It allows users to check levels of DSA, add new items, and update topics in real time through simple chat commands. Whether adding or deleting, the system automatically adjusts the inventory, eliminating manual updates and making inventory management seamless and efficient.",
+    image: "/aich.png",
+    technologies: ["AI-agent", "n8n"],
+    link: "https://tegr.app.n8n.cloud/webhook/3721d251-75d6-43d6-976b-546dd46e146d/chat",
   },
 ];
