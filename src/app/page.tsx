@@ -561,22 +561,22 @@ export default function Home() {
                 <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8">
                   <div className="flex justify-between items-start mb-6">
                     <div>
-                      <h3 className="text-3xl font-medium mt-2">TimeBank</h3>
+                      <h3 className="text-3xl font-medium mt-2">EchoHire</h3>
                     </div>
                   </div>
                   <p className="text-gray-400 text-sm mb-8">
                     Web design & Web development
                   </p>
                   <a
-                    href="https://mutli-app.vercel.app/"
+                    href="https://interview-platform-with-a-real-time-ai-voice-agent.vercel.app/landing"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block"
                   >
                     <div className="relative aspect-[16/10] w-full rounded-[40px] overflow-hidden group">
                       <Image
-                        src="/pt1.png"
-                        alt="TalkCast Project"
+                        src="/int.png"
+                        alt="EchoHire Project"
                         fill
                         sizes="(max-width: 768px) 100vw, 50vw"
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -601,15 +601,15 @@ export default function Home() {
                     Web design & Web development
                   </p>
                   <a
-                    href="https://timebank-knhl.vercel.app/"
+                    href="https://mutli-app.vercel.app/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block"
                   >
                     <div className="relative aspect-[16/10] w-full rounded-[40px] overflow-hidden group">
                       <Image
-                        src="/pt6.png"
-                        alt="TimeBank Project"
+                        src="/pt1.png"
+                        alt="TalkCast Project"
                         fill
                         sizes="(max-width: 768px) 100vw, 50vw"
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
