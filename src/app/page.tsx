@@ -1154,7 +1154,7 @@ export default function Home() {
                     }}
                   >
                     <iframe
-                      src="https://www.loom.com/share/559ae3fb58b048b79a7dc9f96c03d82c?sid=e0592d44-4c18-434a-b107-8443022a453a"
+                      src="https://www.loom.com/embed/559ae3fb58b048b79a7dc9f96c03d82c"
                       frameBorder="0"
                       allowFullScreen
                       style={{
