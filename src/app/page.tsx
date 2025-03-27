@@ -1438,9 +1438,6 @@ export default function Home() {
           </section>
         </div>
       </main>
-      <section className="w-full bg-white text-gray-900 py-20 relative overflow-hidden">
-        {/* ... existing sections ... */}
-      </section>
     </div>
   );
 }
