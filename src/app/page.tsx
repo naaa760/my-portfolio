@@ -1125,14 +1125,8 @@ export default function Home() {
             <SnowEffect />
 
             <div className="absolute inset-0">
-              <Image
-                src="/fl.jpg"
-                alt="Skills Background"
-                fill
-                className="object-cover opacity-10"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/90 to-white/95"></div>
+              <Image src="/tik.jpg" alt="Skills Background" fill priority />
+              <div className="absolute inset-0 bg-gradient-to-b"></div>
             </div>
 
             <div className="absolute inset-0 overflow-hidden">
