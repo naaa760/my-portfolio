@@ -51,27 +51,29 @@ export default function Home() {
     const handleScroll = () => {
       setScrollY(window.scrollY);
 
+      // Instead of changing animation classes, let's use transforms directly
       const scrollContainer = document.querySelector(".scroll-buttons");
       if (scrollContainer) {
-        if (window.scrollY > 300) {
-          scrollContainer.classList.remove(
-            "scroll-speed-normal",
-            "scroll-speed-slow"
-          );
-          scrollContainer.classList.add("scroll-speed-up");
-        } else if (window.scrollY > 150) {
-          scrollContainer.classList.remove(
-            "scroll-speed-up",
-            "scroll-speed-slow"
-          );
-          scrollContainer.classList.add("scroll-speed-normal");
-        } else {
-          scrollContainer.classList.remove(
-            "scroll-speed-up",
-            "scroll-speed-normal"
-          );
-          scrollContainer.classList.add("scroll-speed-slow");
-        }
+        // Remove animation classes that might be interfering
+        scrollContainer.classList.remove(
+          "scroll-speed-up",
+          "scroll-speed-normal",
+          "scroll-speed-slow"
+        );
+
+        // Add a more reliable transition
+        scrollContainer.style.transition =
+          "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)";
+
+        // Create a subtle vertical movement based on scrollY
+        const buttons = document.querySelectorAll(".scroll-button");
+        buttons.forEach((button, index) => {
+          const translateY = Math.sin((scrollY + index * 100) / 200) * 5;
+          button.style.transform = `translateY(${translateY}px) scale(${
+            scrollY > 100 ? 1 : 0.98 + scrollY / 5000
+          })`;
+          button.style.transition = "transform 0.3s ease-out";
+        });
       }
     };
 
@@ -79,60 +81,65 @@ export default function Home() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
+  }, [scrollY]);
+
+  useEffect(() => {
+    // Add smooth scrolling to document
+    document.documentElement.style.scrollBehavior = "smooth";
+
+    return () => {
+      document.documentElement.style.scrollBehavior = "";
+    };
   }, []);
 
   return (
     <div className="relative">
       <main className="min-h-screen bg-white relative">
         <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
-          <Image
-            src="/bg.jpg"
-            alt="Background"
-            fill
-            className="object-cover opacity-10"
-            priority
-          />
+          <Image src="/bg.jpg" alt="Background" fill priority />
         </div>
 
         <div className="relative z-10">
           <header
-            className="flex justify-between items-center px-4 md:px-8 py-4 mx-2 md:mx-6 mt-4 rounded-[30px] relative overflow-hidden z-50 w-auto fixed top-0 left-0 right-0 bg-white/10 backdrop-blur-md border border-white/10"
+            className="flex justify-between items-center px-4 md:px-6 py-3 mx-auto mt-4 rounded-[28px] relative overflow-hidden z-50 w-[95%] md:w-[90%] lg:w-[85%] fixed left-1/2 -translate-x-1/2 top-0 bg-white/5 backdrop-blur-sm border border-amber-100/10"
             style={{
-              boxShadow: "0 4px 20px rgba(0, 0, 0, 0.05)",
+              boxShadow: "0 4px 20px rgba(120, 83, 64, 0.03)",
             }}
           >
-            <div className="absolute -top-10 -left-10 w-24 h-24 rounded-full bg-green-700 opacity-15 blur-xl"></div>
-            <div className="absolute bottom-0 left-1/3 w-16 h-16 rounded-full bg-green-800 opacity-10 blur-xl"></div>
-            <div className="absolute -bottom-10 -right-10 w-20 h-20 rounded-full bg-green-600 opacity-15 blur-xl"></div>
+            <div className="absolute -top-10 -left-10 w-28 h-28 rounded-full bg-gradient-to-br from-amber-500/5 via-amber-400/3 to-transparent blur-xl"></div>
+            <div className="absolute bottom-0 left-1/3 w-20 h-20 rounded-full bg-gradient-to-tr from-stone-500/5 via-amber-300/3 to-transparent blur-xl"></div>
+            <div className="absolute -bottom-10 -right-8 w-24 h-24 rounded-full bg-gradient-to-bl from-amber-400/5 via-stone-300/3 to-transparent blur-xl"></div>
 
-            <div className="flex items-center relative z-10">
-              <span className="text-green-600 text-base font-bold mr-2">✕</span>
-              <span className="text-sm font-medium text-gray-800">
-                PortFolio
+            <div className="flex items-center relative z-10 group">
+              <span className="text-amber-700/80 text-base font-extrabold mr-2 tracking-tight">
+                ✕
+              </span>
+              <span className="text-sm font-semibold bg-gradient-to-r from-amber-800/90 via-stone-700/90 to-amber-700/90 bg-clip-text text-transparent tracking-wide">
+                Portfolio
               </span>
             </div>
 
             <nav className="flex space-x-3 relative z-10">
               <Link href="/projects">
-                <span className="neu-button neu-button-nav text-xs md:text-sm">
+                <span className="neu-button neu-button-nav text-xs md:text-sm py-1.5 px-3 hover:bg-amber-50/5 hover:text-amber-900/70 transition-colors duration-300 font-medium tracking-wide">
                   Projects
                 </span>
               </Link>
 
               <Link href="/experience">
-                <span className="neu-button neu-button-nav text-xs md:text-sm">
+                <span className="neu-button neu-button-nav text-xs md:text-sm py-1.5 px-3 hover:bg-amber-50/5 hover:text-amber-900/70 transition-colors duration-300 font-medium tracking-wide">
                   Experience
                 </span>
               </Link>
             </nav>
 
             <div className="flex items-center relative z-10">
-              <span className="text-[10px] mr-2 md:mr-4 hidden sm:inline text-gray-700">
+              <span className="text-[10px] mr-2 md:mr-3 hidden sm:inline text-stone-700/90 font-medium tracking-tight">
                 Email: nehaprasad27118@gmail.com
               </span>
               <Link
                 href="/contact"
-                className="bg-transparent border border-gray-300 text-gray-800 px-3 md:px-4 py-1.5 rounded-full text-[10px] hover:bg-lime-500 hover:text-white hover:border-lime-500 transition-all duration-300"
+                className="bg-transparent border border-amber-200/20 text-stone-700 px-3 md:px-4 py-1.5 rounded-full text-[10px] hover:bg-amber-500/10 hover:text-amber-800 hover:border-amber-300/30 transition-all duration-300 font-semibold tracking-wide"
               >
                 Contact me
               </Link>
@@ -175,37 +182,44 @@ export default function Home() {
                 <div className="w-full md:w-2/3">
                   <div className="text-4xl md:text-5xl font-normal leading-tight mb-8">
                     <h1>
-                      <span className="inline-block text-[#2d2d2d] drop-shadow-[0_4px_4px_rgba(0,0,0,0.05)] [text-shadow:_0_1px_0_rgb(0_0_0_/_5%)]">
+                      <span className="inline-block text-stone-900 font-bold drop-shadow-[0_4px_6px_rgba(0,0,0,0.1)] [text-shadow:_0_2px_0_rgb(0_0_0_/_15%)] transition-all duration-300 hover:drop-shadow-[0_6px_8px_rgba(0,0,0,0.15)]">
                         Hi! I am{" "}
-                        <span className="neu-button neu-button-name">
+                        <span className="neu-button neu-button-name relative inline-block after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-stone-900/20 after:transform after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100">
                           NEHA PRASAD
                         </span>
                       </span>
                       <br />
                       <span className="inline-block">
-                        <span className="text-[#2d2d2d]">a</span>{" "}
-                        <span className="neu-button neu-button-title">
+                        <span className="text-stone-900 font-medium tracking-wide">
+                          a
+                        </span>{" "}
+                        <span className="neu-button neu-button-title bg-clip-text text-transparent bg-gradient-to-r from-stone-900 via-stone-800 to-stone-900 font-bold">
                           Software Developer
                         </span>
                       </span>
                       <br />
-                      <span className="text-[#2d2d2d]">from</span>{" "}
-                      <span className="neu-button neu-button-name">India</span>
+                      <span className="text-stone-900 font-medium tracking-wide">
+                        from
+                      </span>{" "}
+                      <span className="neu-button neu-button-name relative inline-block font-bold after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-stone-900/20">
+                        India
+                      </span>
                       <br />
-                      <span className="text-[#2d2d2d] drop-shadow-[0_4px_4px_rgba(0,0,0,0.05)] [text-shadow:_0_1px_0_rgb(0_0_0_/_5%)]">
+                      <span className="text-stone-900 font-semibold tracking-wide drop-shadow-[0_4px_4px_rgba(0,0,0,0.08)] [text-shadow:_0_1px_0_rgb(0_0_0_/_10%)] transform transition-all duration-300 hover:scale-[1.01]">
                         Each idea holds
-                        <br />a unique power
+                        <br />a unique{" "}
+                        <span className="font-black tracking-wider">power</span>
                       </span>
                     </h1>
                   </div>
 
                   <div className="mt-8">
-                    <p className="font-dancing-script text-2xl bg-gradient-to-r from-lime-600 via-emerald-500 to-lime-600 bg-clip-text text-transparent relative">
+                    <p className="font-dancing-script text-2xl bg-gradient-to-r from-amber-900 via-amber-700 to-stone-700 bg-clip-text text-transparent relative">
                       building epic stuffs to explore more about Next.Js , AI
                       and Web3.
                       <br />I am all about exploring new tech and creating
                       impact.
-                      <span className="absolute -bottom-2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-lime-400 to-transparent"></span>
+                      <span className="absolute -bottom-2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-amber-600 to-transparent"></span>
                     </p>
                   </div>
                 </div>
@@ -215,95 +229,112 @@ export default function Home() {
 
           <div className="mt-16 mb-8 relative overflow-hidden">
             <div className="w-full">
-              <div className="scroll-container">
-                <div className="scroll-buttons">
+              <div className="scroll-container px-2 sm:px-0">
+                <div className="scroll-buttons flex-wrap justify-center gap-3 sm:gap-4">
                   <a
                     href="https://drive.google.com/file/d/1C9RbzHpfKCJW6ybySqtGVRcRr1JvFMs8/view?usp=drivesdk"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="scroll-button"
+                    className="scroll-button bg-transparent text-gray-800 hover:bg-amber-50 hover:text-gray-900 transition-all duration-300 shadow-[0_2px_6px_rgba(0,0,0,0.05)] border border-gray-200/50 transform hover:scale-105 hover:-translate-y-1 text-sm py-2 will-change-transform"
                   >
+                    <div className="absolute inset-0 bg-lime-500/5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur"></div>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
+                      width="14"
+                      height="14"
                       fill="currentColor"
                       viewBox="0 0 16 16"
+                      className="text-lime-600 mr-2 hidden sm:inline-block"
                     >
                       <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
                       <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
                     </svg>
-                    Download CV
+                    <span className="font-medium tracking-wide">
+                      Download CV
+                    </span>
                   </a>
                   <a
                     href="https://www.linkedin.com/in/neha-prasad-92499821b/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="scroll-button"
+                    className="scroll-button bg-transparent text-gray-800 hover:bg-amber-50 hover:text-gray-900 transition-all duration-300 shadow-[0_2px_6px_rgba(0,0,0,0.05)] border border-gray-200/50 transform hover:scale-105 hover:-translate-y-1 text-sm py-2 will-change-transform"
                   >
+                    <div className="absolute inset-0 bg-lime-500/5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur"></div>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
+                      width="14"
+                      height="14"
                       fill="currentColor"
                       viewBox="0 0 16 16"
+                      className="text-lime-600 mr-2 hidden sm:inline-block"
                     >
                       <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
                     </svg>
-                    LinkedIn
+                    <span className="font-medium tracking-wide">LinkedIn</span>
                   </a>
                   <a
                     href="https://x.com/nehaaaa_6"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="scroll-button"
+                    className="scroll-button bg-transparent text-gray-800 hover:bg-amber-50 hover:text-gray-900 transition-all duration-300 shadow-[0_2px_6px_rgba(0,0,0,0.05)] border border-gray-200/50 transform hover:scale-105 hover:-translate-y-1 text-sm py-2 will-change-transform"
                   >
+                    <div className="absolute inset-0 bg-lime-500/5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur"></div>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
+                      width="14"
+                      height="14"
                       fill="currentColor"
                       viewBox="0 0 16 16"
+                      className="text-lime-600 mr-2 hidden sm:inline-block"
                     >
                       <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
                     </svg>
-                    Twitter
+                    <span className="font-medium tracking-wide">Twitter</span>
                   </a>
                   <a
                     href="https://github.com/naaa760"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="scroll-button"
+                    className="scroll-button bg-transparent text-gray-800 hover:bg-amber-50 hover:text-gray-900 transition-all duration-300 shadow-[0_2px_6px_rgba(0,0,0,0.05)] border border-gray-200/50 transform hover:scale-105 hover:-translate-y-1 text-sm py-2 will-change-transform"
                   >
+                    <div className="absolute inset-0 bg-lime-500/5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur"></div>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
+                      width="14"
+                      height="14"
                       fill="currentColor"
                       viewBox="0 0 16 16"
+                      className="text-lime-600 mr-2 hidden sm:inline-block"
                     >
                       <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
                     </svg>
-                    GitHub
+                    <span className="font-medium tracking-wide">GitHub</span>
                   </a>
-                  <a href="https://x.com/nehaaaa_6" className="scroll-button">
+                  <a
+                    href="https://x.com/nehaaaa_6"
+                    className="scroll-button bg-transparent text-gray-800 hover:bg-amber-50 hover:text-gray-900 transition-all duration-300 shadow-[0_2px_6px_rgba(0,0,0,0.05)] border border-gray-200/50 transform hover:scale-105 hover:-translate-y-1 text-sm py-2 will-change-transform"
+                  >
+                    <div className="absolute inset-0 bg-lime-500/5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur"></div>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
+                      width="14"
+                      height="14"
                       fill="currentColor"
                       viewBox="0 0 16 16"
+                      className="text-lime-600 mr-2 hidden sm:inline-block"
                     >
                       <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
                     </svg>
-                    Contact Me
+                    <span className="font-medium tracking-wide">
+                      Contact Me
+                    </span>
                   </a>
                 </div>
               </div>
             </div>
           </div>
 
-          <section className="w-full bg-gray-900 text-white py-20 mt-20 relative overflow-hidden">
+          <section className="w-full text-white py-20 mt-20 relative overflow-hidden">
             <div className="absolute inset-0 opacity-10">
               <svg
                 width="100%"
@@ -441,45 +472,71 @@ export default function Home() {
               </svg>
             </div>
 
-            <div className="container mx-auto px-6 relative z-10">
-              <div className="flex items-center mb-6">
-                <div className="w-2 h-2 rounded-full bg-lime-400 mr-2"></div>
-                <span className="text-base md:text-lg text-lime-400 font-medium">
-                  About Me
-                </span>
-              </div>
+            <div className="relative z-10 w-full">
+              <div
+                className="absolute inset-0 w-full h-full overflow-hidden z-0"
+                style={{
+                  backgroundImage: "url('/de.jpg')",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
+                }}
+              ></div>
 
-              <h2 className="text-2xl md:text-2xl font-light mb-16 max-w-3xl leading-relaxed text-gray-300">
-                I am a developer with over two years of experience building
-                websites and APIs using React, Next.js, and TypeScript. I take
-                Figma designs and turn them into working, responsive components.
-                I also manage AWS front-end deployments to keep websites running
-                efficiently. I focus on creating fast, bug-free, and optimized
-                solutions, and I use AI tools to speed up development.
-                Additionally, I have experience building LLM apps or Web3.
-                I&apos;m always eager to learn new technologies and improve my
-                skills to deliver the best results for every project.
-              </h2>
+              <div className="px-6 md:px-12 lg:px-20 relative z-10">
+                {/* Simplified About Me heading */}
+                <div className="flex items-center mb-8 relative z-10">
+                  <div className="w-2 h-2 rounded-full bg-lime-400 mr-2"></div>
+                  <h2 className="text-xl md:text-2xl text-lime-400 font-medium">
+                    About Me
+                  </h2>
+                </div>
 
-              <div className="relative inline-block group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-lime-500 to-lime-300 rounded-full blur-md opacity-70 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-                <button className="relative bg-lime-400 hover:bg-lime-500 text-gray-900 font-medium py-3 px-8 rounded-full flex items-center transition-all duration-300">
-                  Become a client
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-4 w-4 ml-2"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    />
-                  </svg>
-                </button>
+                <div className="bg-transparent rounded-xl p-6 relative z-10 max-w-6xl mx-auto">
+                  {/* Decorative elements */}
+                  <div className="absolute -top-8 -left-8 w-16 h-16 rounded-full bg-gradient-to-br from-amber-500/10 to-amber-300/5 blur-lg"></div>
+                  <div className="absolute -bottom-8 -right-8 w-20 h-20 rounded-full bg-gradient-to-tl from-amber-600/10 to-amber-400/5 blur-lg"></div>
+
+                  {/* Enhanced content container with decorative border */}
+                  <div className="relative p-8 rounded-xl bg-white/20 backdrop-blur-md border border-amber-100/30 shadow-2xl">
+                    {/* Decorative corner accents */}
+                    <div className="absolute top-0 left-0 w-12 h-12 border-t-2 border-l-2 border-amber-600/20 rounded-tl-lg"></div>
+                    <div className="absolute top-0 right-0 w-12 h-12 border-t-2 border-r-2 border-amber-600/20 rounded-tr-lg"></div>
+                    <div className="absolute bottom-0 left-0 w-12 h-12 border-b-2 border-l-2 border-amber-600/20 rounded-bl-lg"></div>
+                    <div className="absolute bottom-0 right-0 w-12 h-12 border-b-2 border-r-2 border-amber-600/20 rounded-br-lg"></div>
+
+                    {/* Beautiful paragraph with enhanced styling */}
+                    <p className="font-serif text-stone-800 font-medium leading-relaxed tracking-wide text-lg relative z-10">
+                      <span className="text-2xl font-playfair font-semibold text-amber-800 first-letter:text-6xl first-letter:font-bold first-letter:mr-2 first-letter:float-left first-letter:leading-tight first-letter:text-amber-700">
+                        I
+                      </span>{" "}
+                      <span className="drop-shadow-sm">
+                        am a developer with over two years of experience
+                        building websites and APIs using React, Next.js, and
+                        TypeScript. I take Figma designs and turn them into
+                        working, responsive components.
+                      </span>{" "}
+                      <span className="italic text-amber-800 drop-shadow-sm">
+                        I also manage AWS front-end deployments to keep websites
+                        running efficiently.
+                      </span>{" "}
+                      <span className="drop-shadow-sm">
+                        I focus on creating fast, bug-free, and optimized
+                        solutions, and I use AI tools to speed up development.
+                        Additionally, I have experience building LLM apps or
+                        Web3.
+                      </span>{" "}
+                      <span className="font-semibold text-amber-800 drop-shadow-sm">
+                        I&apos;m always eager to learn new technologies and
+                        improve my skills to deliver the best results for every
+                        project.
+                      </span>
+                    </p>
+
+                    {/* Decorative underline flourish */}
+                    <div className="w-1/3 h-0.5 bg-gradient-to-r from-transparent via-amber-500/30 to-transparent mx-auto mt-6"></div>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
@@ -810,6 +867,7 @@ export default function Home() {
           </section>
 
           <section className="w-full bg-white text-gray-900 py-20 relative overflow-hidden">
+            {/* Enhanced background with animated particles */}
             <div className="absolute inset-0 z-0">
               <Image
                 src="/pg.jpg"
@@ -819,31 +877,58 @@ export default function Home() {
                 quality={100}
                 priority
               />
+              <div className="absolute inset-0 bg-gradient-to-tr from-lime-500/5 via-transparent to-emerald-500/5"></div>
+
+              {/* Animated floating particles */}
+              <div className="absolute inset-0 overflow-hidden">
+                {[...Array(20)].map((_, i) => (
+                  <div
+                    key={i}
+                    className="absolute w-2 h-2 rounded-full bg-lime-400/30"
+                    style={{
+                      top: `${Math.random() * 100}%`,
+                      left: `${Math.random() * 100}%`,
+                      animation: `float ${3 + Math.random() * 5}s ease-in-out ${
+                        Math.random() * 5
+                      }s infinite alternate`,
+                      transform: `scale(${0.5 + Math.random()})`,
+                    }}
+                  ></div>
+                ))}
+              </div>
             </div>
 
             <div className="container mx-auto px-6 relative z-10">
-              <div className="flex items-center mb-6">
-                <div className="w-2 h-2 rounded-full bg-[#84cc16] mr-2 animate-glow">
-                  <div className="absolute w-4 h-4 -inset-1 bg-[#84cc16] opacity-75 blur-sm rounded-full"></div>
+              {/* Enhanced section heading with animation */}
+              <div className="flex items-center mb-6 relative">
+                <div className="w-2 h-2 rounded-full bg-[#84cc16] mr-2 animate-pulse">
+                  <div className="absolute w-4 h-4 -inset-1 bg-[#84cc16] opacity-75 blur-sm rounded-full animate-ping"></div>
                 </div>
-                <span className="text-sm text-[#84cc16] relative">
-                  <span className="relative z-10">Contact me</span>
-                  <span className="absolute inset-0 bg-[#84cc16] opacity-25 blur-[2px]"></span>
+                <span className="text-sm text-[#84cc16] relative group">
+                  <span className="relative z-10 tracking-wider font-medium">
+                    Contact me
+                  </span>
+                  <span className="absolute inset-0 bg-[#84cc16] opacity-25 blur-[2px] group-hover:blur-[4px] transition-all duration-300"></span>
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-lime-500 group-hover:w-full transition-all duration-300"></span>
                 </span>
               </div>
 
+              {/* Enhanced heading with more dynamic effects */}
               <h2 className="font-dancing-script relative mb-20 max-w-4xl">
                 <span className="text-6xl md:text-7xl bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-gray-600 relative z-10">
                   I am all over
                   <br />
-                  <span className="text-7xl md:text-8xl bg-gradient-to-r from-lime-500 via-emerald-500 to-lime-400 bg-clip-text text-transparent ml-8 relative">
+                  <span className="text-7xl md:text-8xl bg-gradient-to-r from-lime-500 via-emerald-500 to-lime-400 bg-clip-text text-transparent ml-8 relative inline-block transform hover:scale-[1.02] transition-transform duration-300">
                     the internet
-                    <div className="absolute -inset-2 bg-gradient-to-r from-lime-500/20 to-emerald-500/20 blur-2xl -z-10"></div>
+                    <div className="absolute -inset-2 bg-gradient-to-r from-lime-500/20 to-emerald-500/20 blur-2xl -z-10 animate-pulse"></div>
+                    <div className="absolute -inset-4 border border-lime-500/10 rounded-full rotate-6 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
                   </span>
                 </span>
 
-                <div className="absolute -top-8 -left-8 w-16 h-16 bg-gradient-to-br from-lime-400/20 to-emerald-400/20 rounded-full blur-xl"></div>
-                <div className="absolute top-1/2 -right-4 w-24 h-24 bg-gradient-to-br from-emerald-400/20 to-lime-400/20 rounded-full blur-xl"></div>
+                {/* Enhanced decorative elements */}
+                <div className="absolute -top-8 -left-8 w-20 h-20 bg-gradient-to-br from-lime-400/20 to-emerald-400/20 rounded-full blur-xl animate-blob"></div>
+                <div className="absolute top-1/2 -right-4 w-28 h-28 bg-gradient-to-br from-emerald-400/20 to-lime-400/20 rounded-full blur-xl animate-blob animation-delay-2000"></div>
+                <div className="absolute bottom-0 left-1/4 w-16 h-16 bg-gradient-to-br from-lime-400/10 to-emerald-400/10 rounded-full blur-xl animate-blob animation-delay-4000"></div>
 
                 <div className="absolute top-0 right-0 flex gap-2">
                   {[...Array(3)].map((_, i) => (
@@ -859,14 +944,16 @@ export default function Home() {
                   ))}
                 </div>
 
-                <div className="absolute -bottom-4 left-0 w-1/2 h-px bg-gradient-to-r from-transparent via-lime-500/50 to-transparent"></div>
+                <div className="absolute -bottom-4 left-0 w-1/2 h-0.5 bg-gradient-to-r from-transparent via-lime-500/50 to-transparent"></div>
               </h2>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Enhanced grid with more interactive elements */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {[
                   {
                     name: "Twitter/X",
                     url: "https://x.com/nehaaaa_6",
+                    description: "Updates & thoughts",
                     icon: (
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -883,31 +970,77 @@ export default function Home() {
                   {
                     name: "LinkedIn",
                     url: "https://www.linkedin.com/in/neha-prasad-92499821b/",
+                    description: "Professional network",
+                    icon: (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="currentColor"
+                        className="transition-transform group-hover:scale-110"
+                        viewBox="0 0 16 16"
+                      >
+                        <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+                      </svg>
+                    ),
                   },
-                  { name: "GitHub", url: "https://github.com/naaa760" },
-                ].map((platform) => (
+                  {
+                    name: "GitHub",
+                    url: "https://github.com/naaa760",
+                    description: "Code & projects",
+                    icon: (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="currentColor"
+                        className="transition-transform group-hover:scale-110"
+                        viewBox="0 0 16 16"
+                      >
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                      </svg>
+                    ),
+                  },
+                ].map((platform, idx) => (
                   <Link
                     href={platform.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     key={platform.name}
                     className="group relative overflow-hidden rounded-2xl p-8 transition-all duration-500 hover:shadow-2xl"
+                    style={{
+                      transformOrigin: idx % 2 === 0 ? "left" : "right",
+                      transitionDelay: `${idx * 50}ms`,
+                    }}
                   >
+                    {/* Enhanced background effects */}
                     <div className="absolute inset-0 bg-gradient-to-br from-lime-400/20 via-emerald-400/20 to-lime-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <div className="absolute -inset-px bg-gradient-to-br from-lime-500 via-emerald-500 to-lime-500 opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500 group-hover:duration-200"></div>
+
+                    {/* Decorative corner accent */}
+                    <div className="absolute top-0 left-0 w-12 h-12 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                      <div className="absolute top-0 left-0 w-4 h-0.5 bg-lime-500 transform origin-left"></div>
+                      <div className="absolute top-0 left-0 w-0.5 h-4 bg-lime-500 transform origin-top"></div>
+                    </div>
+                    <div className="absolute bottom-0 right-0 w-12 h-12 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                      <div className="absolute bottom-0 right-0 w-4 h-0.5 bg-lime-500 transform origin-right"></div>
+                      <div className="absolute bottom-0 right-0 w-0.5 h-4 bg-lime-500 transform origin-bottom"></div>
+                    </div>
 
                     <div className="relative flex justify-between items-center">
                       <div className="space-y-2">
                         <h3 className="text-xl font-semibold text-gray-800 group-hover:text-lime-600 transition-colors">
                           {platform.name}
+                          <div className="h-0.5 w-0 bg-lime-500/50 group-hover:w-full transition-all duration-300 mt-0.5"></div>
                         </h3>
                         <p className="text-sm text-gray-600 group-hover:text-lime-500 transition-colors">
-                          Connect with me
+                          {platform.description}
                         </p>
                       </div>
 
-                      <div className="bg-gradient-to-br from-lime-500 to-emerald-500 p-3 rounded-full text-white transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
+                      <div className="bg-gradient-to-br from-lime-500 to-emerald-500 p-3 rounded-full text-white transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-lg">
                         {platform.icon}
+                        <div className="absolute inset-0 rounded-full bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                       </div>
                     </div>
 
@@ -915,21 +1048,41 @@ export default function Home() {
                   </Link>
                 ))}
 
+                {/* Enhanced call-to-action card */}
                 <Link
                   href="mailto:nehaprasad27118@gmail.com"
-                  className="bg-gradient-to-br from-lime-500 to-emerald-500 rounded-2xl p-8 col-span-2 relative group cursor-pointer overflow-hidden"
+                  className="bg-gradient-to-br from-lime-500 to-emerald-500 rounded-2xl p-8 col-span-1 md:col-span-2 relative group cursor-pointer overflow-hidden transform transition-all duration-500 hover:-translate-y-1 hover:shadow-xl"
                 >
+                  {/* Enhanced background elements */}
                   <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-                  <div className="relative flex justify-between items-center">
-                    <div className="space-y-2">
-                      <h3 className="text-2xl font-semibold text-white">
+                  <div className="absolute inset-0">
+                    <div className="absolute -top-10 -left-10 w-40 h-40 bg-white/5 rounded-full blur-3xl"></div>
+                    <div className="absolute -bottom-20 -right-10 w-60 h-60 bg-white/5 rounded-full blur-3xl"></div>
+                  </div>
+
+                  {/* Enhanced ripple effect on hover */}
+                  <div className="absolute inset-0 overflow-hidden">
+                    <div className="absolute -inset-full top-0 left-1/2 w-40 h-40 bg-white/10 rounded-full -translate-x-1/2 -translate-y-full group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-700 ease-out transform"></div>
+                  </div>
+
+                  <div className="relative flex justify-between items-center z-10">
+                    <div className="space-y-3">
+                      <h3 className="text-2xl md:text-3xl font-bold text-white drop-shadow-sm">
                         Get in touch
                       </h3>
-                      <p className="text-white/80">Lets work together</p>
+                      <p className="text-white/80 md:text-lg">
+                        Let's work together on something amazing
+                      </p>
+                      <div className="hidden md:block mt-2 pt-2 border-t border-white/20">
+                        <p className="text-white/70 text-sm">
+                          nehaprasad27118@gmail.com
+                        </p>
+                      </div>
                     </div>
-                    <div className="bg-white/20 backdrop-blur-sm p-4 rounded-full transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
+                    <div className="bg-white/20 backdrop-blur-sm p-4 rounded-full transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-lg relative overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent"></div>
                       <svg
-                        className="w-6 h-6 text-white"
+                        className="w-6 h-6 text-white relative z-10"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -942,6 +1095,13 @@ export default function Home() {
                         />
                       </svg>
                     </div>
+                  </div>
+
+                  {/* Animated border */}
+                  <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                    <div className="absolute inset-0 border border-white/20 rounded-2xl"></div>
+                    <div className="absolute top-0 left-0 w-1/3 h-0.5 bg-white/30 animate-border-flow"></div>
+                    <div className="absolute bottom-0 right-0 w-1/3 h-0.5 bg-white/30 animate-border-flow animation-delay-2000"></div>
                   </div>
                 </Link>
               </div>
